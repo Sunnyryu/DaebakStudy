@@ -1,4 +1,5 @@
 ﻿Jae Sun Lee
+ 
 3/3/2020
 Report on the key features on the target websites’ services:
 “Auto Data Preparation”
