@@ -1,7 +1,8 @@
 ﻿Jae Sun Lee
- 
 3/3/2020
+
 Report on the key features on the target websites’ services:
+
 “Auto Data Preparation”
 -the ability to accept a wide variety of input files
 -auto data cleaning and preparation 
@@ -11,12 +12,14 @@ Report on the key features on the target websites’ services:
 -compares all the result to obtain the best result
 “Helps choose the right campaign”
 -find customers based on offers and discount campaigns
+
 Application goals (top-down priority):
 1. Multidimensional analysis of sales, customers, products, time, region, etc.
 2. Analysis of effectiveness of sales campaign
 3. Product recommendation + cross reference
 4. Customer retention
 5. Design and construction of data warehouses based on the benefits of data mining
+
 Research Topics:
 1. Prediction / Classification analysis based on classification and regression models of machine learning
 2. Cluster analysis
