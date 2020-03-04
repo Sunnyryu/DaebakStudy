@@ -24,7 +24,20 @@ var _Room = require("./Room");
 
 var _Room2 = _interopRequireDefault(_Room);
 
+var _firebaseBrowser = require("firebase/firebase-browser");
+
+var _firebaseBrowser2 = _interopRequireDefault(_firebaseBrowser);
+
+var _dotenv = require("dotenv");
+
+var _dotenv2 = _interopRequireDefault(_dotenv);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+_dotenv2.default.config();
+var API_KEY = "" + process.env.REACT_APP_API_KEY;
+console.log(process.env.REACT_APP_API_KEY);
+console.log(API_KEY);
 
 // Routing 정의하기
 var appRouting = _react2.default.createElement(
@@ -48,6 +61,20 @@ var appRouting = _react2.default.createElement(
 if (!location.hash.length) {
     location.hash = "#/login";
 }
+
+//Firebase 초기화하기
+var Config = {
+    apiKey: process.env.REACT_APP_API_KEY,
+    authDomain: "electron-chat-6ca15.firebaseapp.com",
+    databaseURL: "https://electron-chat-6ca15.firebaseio.com",
+    projectId: "electron-chat-6ca15",
+    storageBucket: "electron-chat-6ca15.appspot.com",
+    messagingSenderId: "213254139575",
+    appId: "1:213254139575:web:dafe37a10ad96d02eee732",
+    measurementId: "G-537GN73NK3"
+};
+// Initialize Firebase
+_firebaseBrowser2.default.initializeApp(Config);
 
 // Application 렌더링 하기
 (0, _reactDom.render)(appRouting, document.getElementById("app"));
