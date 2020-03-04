@@ -6,6 +6,12 @@ import Signup from "./Signup";
 import Rooms from "./Rooms";
 import Room from "./Room";
 import firebase from "firebase/firebase-browser";
+import dotenv from "dotenv";
+
+dotenv.config();
+const API_KEY = `${process.env.REACT_APP_API_KEY}`
+console.log(process.env.REACT_APP_API_KEY);
+console.log(API_KEY);
 
 // Routing 정의하기
 const appRouting = (
@@ -28,7 +34,7 @@ if (!location.hash.length) {
 
 //Firebase 초기화하기
 var Config = {
-    apiKey: "AIzaSyAlA6Akg5hADZaBwxdbCQoJfSlPRY8BmZc",
+    apiKey: process.env.REACT_APP_API_KEY,
     authDomain: "electron-chat-6ca15.firebaseapp.com",
     databaseURL: "https://electron-chat-6ca15.firebaseio.com",
     projectId: "electron-chat-6ca15",
