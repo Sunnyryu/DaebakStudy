@@ -80,4 +80,8 @@ React 컴포넌트에서 link to라고 작성된 부분은 react-router를 통�
 
 npm run watch로 Babel 트랜스파일러 실행 => npm start로 Electron시작
 
+현재 공부하는 책에서는 react 및 electron 버전이 구 버전인 부분으로 인해서 신 버전에는 바뀐게 많기에.. 나중에 토이 프로젝트 시 .. 주의!
+
+
+
 ```
