@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Prototype_Dataset_Sample.iml" filepath="$PROJECT_DIR$/.idea/Prototype_Dataset_Sample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Prototypes.iml" filepath="$PROJECT_DIR$/.idea/Prototypes.iml" />
     </modules>
   </component>
 </project>
