@@ -1,10 +1,12 @@
-Collaborative Filtering
+##Collaborative Filtering
+
 
 This method makes recommendations based on the ratings of other people - people collaborate to come up with recommendations. 
 
 Let x be rating A and y be rating B.
 
-1) Manhattan Distance:
+
+####1) Manhattan Distance:
 
 The easiest distance measure between the ratings of 2 elements on a plane.
 
@@ -20,10 +22,13 @@ We can use the Minkowski Distance Metric to generalize the Manhattan Distance an
 where
 
 r=1: The formula is Manhattan Distance,
+
 r=2: The formula is Euclidean Distance,
+
 r=infinity: Supremum Distance.
 
-2) Pearson Correlation Coefficient:
+
+####2) Pearson Correlation Coefficient:
 
 Say for example there is a table that compares the ratings of items from users.
 
@@ -39,6 +44,8 @@ The Pearson Correlation Coefficient is a measure of correlation between two vari
 
 where 
 
-n is sample size
-xi and yi are the individual sample points with index i
+n is sample size,
+
+xi and yi are the individual sample points with index i,
+
 x bar is the sample mean for x, likewise for y bar being the sample mean for y.
