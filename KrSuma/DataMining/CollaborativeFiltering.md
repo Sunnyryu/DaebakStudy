@@ -27,6 +27,9 @@ r=2: The formula is Euclidean Distance,
 
 r=infinity: Supremum Distance.
 
+Conclusion: use if data is dense + magnitude of attribute values is important
+
+
 
 #### 2) Pearson Correlation Coefficient:
 
@@ -49,3 +52,25 @@ n is sample size,
 xi and yi are the individual sample points with index i,
 
 x bar is the sample mean for x, likewise for y bar being the sample mean for y.
+
+Conclusion: how similar are the two data? use if the data is subject to grade-inflation
+
+#### 3) Cosine Similarity:
+
+Cosine similarity is used when the data is sparse - meaning, many ratings over millions and millions of items are empty (not rated at all). The cosine similiary ratings output is from -1 to 1 inclusive ([-1,1]), same as the Pearson Correlation.
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=cos(x,y)=\frac{x&space;\cdot&space;y}{||x||&space;\cdot&space;||y||}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?cos(x,y)=\frac{x&space;\cdot&space;y}{||x||&space;\cdot&space;||y||}" title="cos(x,y)=\frac{x \cdot y}{||x|| \cdot ||y||}" /></a>
+
+where the double bar of x and y indicates the length of the vector x:
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=\sum_{i=1}^{n}x_{i}^{2}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\sum_{i=1}^{n}x_{i}^{2}" title="\sum_{i=1}^{n}x_{i}^{2}" /></a>
+
+Conclusion: ignores 0-0 matchings. use if data is sparse
+
+#### Which similarity measures to use:
+
+-If the data is subject to grade-inflation(different users may be using different scales), use Pearson.
+
+-If the data is dense(almost all attributes have non-zero values) and the magnitude of the attribute values is important, use distance measures such as Euclidean or Manhattan.
+
+-If the data is sparse, consider using Cosine Similarity.
