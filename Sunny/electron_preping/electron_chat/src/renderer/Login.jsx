@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router";
+import { Link, hashHistory } from "react-router";
 import Errors from "./Errors";
 import firebase from "firebase/firebase-browser";
 
