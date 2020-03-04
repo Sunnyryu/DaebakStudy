@@ -41,14 +41,20 @@ twod_slice = taxi[1:4, :3]
 
 ## VECTOR MATH
 vector_a + vector_b: Addition
+
 vector_a - vector_b: Subtraction
+
 vector_a * vector_b: Multiplication (this is unrelated to the vector multiplication used in linear algebra).
+
 vector_a / vector_b: Division
 
 ## CALCULATING STATISTICS FOR 1D NDARRAYS
 ndarray.min() to calculate the minimum value
+
 ndarray.max() to calculate the maximum value
+
 ndarray.mean() to calculate the mean average value
+
 ndarray.sum() to calculate the sum of the values
 
 ## CALCULATING STATISTICS FOR 2D NDARRAYS
