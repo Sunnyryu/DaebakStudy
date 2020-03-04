@@ -1,4 +1,4 @@
-##Collaborative Filtering
+## Collaborative Filtering
 
 
 This method makes recommendations based on the ratings of other people - people collaborate to come up with recommendations. 
@@ -6,7 +6,7 @@ This method makes recommendations based on the ratings of other people - people 
 Let x be rating A and y be rating B.
 
 
-####1) Manhattan Distance:
+#### 1) Manhattan Distance:
 
 The easiest distance measure between the ratings of 2 elements on a plane.
 
@@ -28,7 +28,7 @@ r=2: The formula is Euclidean Distance,
 r=infinity: Supremum Distance.
 
 
-####2) Pearson Correlation Coefficient:
+#### 2) Pearson Correlation Coefficient:
 
 Say for example there is a table that compares the ratings of items from users.
 
