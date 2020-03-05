@@ -1,7 +1,7 @@
 import React from "react";
 import Editor from "./Editor";
 import Previewer from "./Previewer";
-import style from "./MarkDownEditorUI.css";
+import style from "./MarkDownEditorsUI";
 import { ipcRenderer } from "electron";
 
 export default class MarkDownEditorUI extends React.Component {
