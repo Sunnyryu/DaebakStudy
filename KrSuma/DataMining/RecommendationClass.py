@@ -24,6 +24,7 @@ users = {"Angelica": {"Blues Traveler": 3.5, "Broken Bells": 2.0, "Norah Jones":
                       "The Strokes": 3.0}
          }
 
+
 class recommender:
 
     def __init__(self, data, k=1, metric='pearson', n=5):
@@ -50,16 +51,6 @@ class recommender:
             return id
 
     def userRatings(self, id, n):
-        # print("Ratings for " + self.userid2name[id])
-        # ratings = self.data[id]
-        # print(len(ratings))
-        # ratings = list(ratings.items())[:n]
-        # ratings = [(self.convertProductID2name(k), v)
-        #            for (k, v) in ratings]
-        # ratings.sort(key=lambda artistTuple: artistTuple[1],
-        #              reverse=True)
-        # for rating in ratings:
-        #     print("%s\t%i" % (rating[0], rating[1]))
         pass
 
     def showUserTopItems(self, user, n):
@@ -88,33 +79,33 @@ class recommender:
             for item2 in ratings:
                 ratings[item2] /= self.frequencies[item][item2]
 
-    def slopeOneRecommendations(self, userRatings):
-        recommendations = {}
-        frequencies = {}
-        # for every item and rating in the user's recommendations
-        for (userItem, userRating) in userRatings.items():
-            # for every item in our dataset that the user didn't rate
-            for (diffItem, diffRatings) in self.deviations.items():
-                if diffItem not in userRatings and \
-                        userItem in self.deviations[diffItem]:
-                    freq = self.frequencies[diffItem][userItem]
-                    recommendations.setdefault(diffItem, 0.0)
-                    frequencies.setdefault(diffItem, 0)
-                    # add to the running sum representing the numerator
-                    # of the formula
-                    recommendations[diffItem] += (diffRatings[userItem] +
-                                                  userRating) * freq
-                    # keep a running sum of the frequency of diffitem
-                    frequencies[diffItem] += freq
-        recommendations = [(self.convertProductID2name(k),
-                            v / frequencies[k])
-                           for (k, v) in recommendations.items()]
-        # finally sort and return
-        recommendations.sort(key=lambda artistTuple: artistTuple[1],
-                             reverse=True)
-        # I am only going to return the first 50 recommendations
-        return recommendations[:50]
+    # for huge datasets - not used for now
+    """
+    NEED TESTING
+    """
 
+    def slopeOneRecommendations(self, userRatings):
+        #     recommendations = {}
+        #     frequencies = {}
+        #     for (userItem, userRating) in userRatings.items():
+        #         for (diffItem, diffRatings) in self.deviations.items():
+        #             if diffItem not in userRatings and \
+        #                     userItem in self.deviations[diffItem]:
+        #                 freq = self.frequencies[diffItem][userItem]
+        #                 recommendations.setdefault(diffItem, 0.0)
+        #                 frequencies.setdefault(diffItem, 0)
+        #                 recommendations[diffItem] += (diffRatings[userItem] +
+        #                                               userRating) * freq
+        #                 frequencies[diffItem] += freq
+        #     recommendations = [(self.convertProductID2name(k),
+        #                         v / frequencies[k])
+        #                        for (k, v) in recommendations.items()]
+        #     recommendations.sort(key=lambda artistTuple: artistTuple[1],
+        #                          reverse=True)
+        #     return recommendations[:50]
+        pass
+
+    # pearson correlation
     def pearson(self, rating1, rating2):
         sum_xy = 0
         sum_x = 0
@@ -153,6 +144,7 @@ class recommender:
                        reverse=True)
         return distances
 
+    # recommender function that recommends the user
     def recommend(self, user):
         recommendations = {}
         nearest = self.computeNearestNeighbor(user)
@@ -167,12 +159,9 @@ class recommender:
             for artist in neighborRatings:
                 if not artist in userRatings:
                     if artist not in recommendations:
-                        recommendations[artist] = neighborRatings[artist] * \
-                                                  weight
+                        recommendations[artist] = neighborRatings[artist] * weight
                     else:
-                        recommendations[artist] = recommendations[artist] + \
-                                                  neighborRatings[artist] * \
-                                                  weight
+                        recommendations[artist] = recommendations[artist] + neighborRatings[artist] * weight
         recommendations = list(recommendations.items())[:self.n]
         recommendations = [(self.convertProductID2name(k), v)
                            for (k, v) in recommendations]
@@ -180,6 +169,7 @@ class recommender:
                              reverse=True)
         return recommendations
 
-r =recommender(users)
+
+r = recommender(users)
 print(r.recommend('Jordyn'))
 print(r.recommend('Hailey'))
