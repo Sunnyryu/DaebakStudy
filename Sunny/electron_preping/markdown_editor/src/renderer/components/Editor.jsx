@@ -1,13 +1,13 @@
 import React from "react";
-import style from "./Editor.css";
+import style from "./css/Editor.css";
 
 export default function Editor(props) {
-  return (
-    <textarea
-      id="editor"
-      className={`${style.editor} ${props.className}`}
-      value={props.value}
-      onChange={props.onChange}
-    />
-  );
+    return (
+        <textarea
+            id="editor"
+            className={`${style.editor} ${props.className}`}
+            value={props.value}
+            onChange={props.onChange}
+        />
+    );
 }
