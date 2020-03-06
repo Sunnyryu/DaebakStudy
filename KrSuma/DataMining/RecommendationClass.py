@@ -6,6 +6,12 @@ program based on the collaborative filtering research -
 equations and algorithms based on the notes.
 '''
 
+'''
+Possible that we can make our own recommendtation system by reading into the data of the user's ratings
+within the recorded purchase history from a csv, then create a list of recommendations to users and notify them
+either real-time (when they browse the site) or to other means (emails, notifications..etc.)
+'''
+
 users = {"Angelica": {"Blues Traveler": 3.5, "Broken Bells": 2.0, "Norah Jones": 4.5, "Phoenix": 5.0,
                       "Slightly Stoopid": 1.5, "The Strokes": 2.5, "Vampire Weekend": 2.0},
          "Bill": {"Blues Traveler": 2.0, "Broken Bells": 3.5, "Deadmau5": 4.0, "Phoenix": 2.0, "Slightly Stoopid": 3.5,
