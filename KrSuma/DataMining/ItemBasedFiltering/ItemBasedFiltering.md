@@ -38,3 +38,18 @@ where:
 
 is the rating R of item i from user u, minus the average (mean) rating for all the item the user rated.
 
+-To make a prediction that user u will give item i using the similarity between the items:
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=p(u,&space;i)=\frac{\sum_{N\in{similarTo(i)}}(S_{i,N}&space;\times&space;R_{u,N})}{\sum_{N\in{similarTo(i)}}(|S_{i,N}|)}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?p(u,&space;i)=\frac{\sum_{N\in{similarTo(i)}}(S_{i,N}&space;\times&space;R_{u,N})}{\sum_{N\in{similarTo(i)}}(|S_{i,N}|)}" title="p(u, i)=\frac{\sum_{N\in{similarTo(i)}}(S_{i,N} \times R_{u,N})}{\sum_{N\in{similarTo(i)}}(|S_{i,N}|)}" /></a>
+
+where:
+
+p(u,i) is the prediction that user u will give the item i
+
+N - each of items that user u rated that are similar to item i
+
+S(i,j) - is the function S(i,j) 
+
+R(u,N) - rating user u gave item N
+
+
