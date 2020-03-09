@@ -17,4 +17,7 @@
 1. Electron study with react & node
 2. git study
 
+3.6 plan
+1. Electron study with react & node 
+
 ```
