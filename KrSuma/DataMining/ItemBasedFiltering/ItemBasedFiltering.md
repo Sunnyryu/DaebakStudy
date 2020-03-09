@@ -24,3 +24,32 @@ to come up with a recommendation with huge dataset (~1 million for example) is a
 
 -Item based filtering is simply using the model we built with the existing dataset to come up with a recommendation.
 
+#### item-based collaborative filtering recommendation system:
+
+-To compute the similarity between the items.
+
+-we subtract the user's average rage ratings from each rating to compensation for grade inflation.
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=c(i,j)=\frac{\sum_{u\in{U}}(R_{u,i}-\bar{R}_{u})(R_{i,j}-\bar{R}_{u})}{\sqrt{\sum_{u\in{u}}(R_{u,i}-\bar{R}_{u})^{2}}\sqrt{\sum_{u\in{U}}(R_{u,j}-\bar{R}_{u})^{2}}}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?c(i,j)=\frac{\sum_{u\in{U}}(R_{u,i}-\bar{R}_{u})(R_{i,j}-\bar{R}_{u})}{\sqrt{\sum_{u\in{u}}(R_{u,i}-\bar{R}_{u})^{2}}\sqrt{\sum_{u\in{U}}(R_{u,j}-\bar{R}_{u})^{2}}}" title="c(i,j)=\frac{\sum_{u\in{U}}(R_{u,i}-\bar{R}_{u})(R_{i,j}-\bar{R}_{u})}{\sqrt{\sum_{u\in{u}}(R_{u,i}-\bar{R}_{u})^{2}}\sqrt{\sum_{u\in{U}}(R_{u,j}-\bar{R}_{u})^{2}}}" /></a>
+
+where:
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=(R_{u,i}-\bar{R}_{u})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?(R_{u,i}-\bar{R}_{u})" title="(R_{u,i}-\bar{R}_{u})" /></a>
+
+is the rating R of item i from user u, minus the average (mean) rating for all the item the user rated.
+
+-To make a prediction that user u will give item i using the similarity between the items:
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=p(u,&space;i)=\frac{\sum_{N\in{similarTo(i)}}(S_{i,N}&space;\times&space;R_{u,N})}{\sum_{N\in{similarTo(i)}}(|S_{i,N}|)}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?p(u,&space;i)=\frac{\sum_{N\in{similarTo(i)}}(S_{i,N}&space;\times&space;R_{u,N})}{\sum_{N\in{similarTo(i)}}(|S_{i,N}|)}" title="p(u, i)=\frac{\sum_{N\in{similarTo(i)}}(S_{i,N} \times R_{u,N})}{\sum_{N\in{similarTo(i)}}(|S_{i,N}|)}" /></a>
+
+where:
+
+p(u,i) is the prediction that user u will give the item i
+
+N - each of items that user u rated that are similar to item i
+
+S(i,j) - is the function S(i,j) 
+
+R(u,N) - rating user u gave item N
+
+
