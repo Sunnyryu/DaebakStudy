@@ -24,3 +24,17 @@ to come up with a recommendation with huge dataset (~1 million for example) is a
 
 -Item based filtering is simply using the model we built with the existing dataset to come up with a recommendation.
 
+#### item-based collaborative filtering recommendation system:
+
+-To compute the similarity between the items.
+
+-we subtract the user's average rage ratings from each rating to compensation for grade inflation.
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=c(i,j)=\frac{\sum_{u\in{U}}(R_{u,i}-\bar{R}_{u})(R_{i,j}-\bar{R}_{u})}{\sqrt{\sum_{u\in{u}}(R_{u,i}-\bar{R}_{u})^{2}}\sqrt{\sum_{u\in{U}}(R_{u,j}-\bar{R}_{u})^{2}}}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?c(i,j)=\frac{\sum_{u\in{U}}(R_{u,i}-\bar{R}_{u})(R_{i,j}-\bar{R}_{u})}{\sqrt{\sum_{u\in{u}}(R_{u,i}-\bar{R}_{u})^{2}}\sqrt{\sum_{u\in{U}}(R_{u,j}-\bar{R}_{u})^{2}}}" title="c(i,j)=\frac{\sum_{u\in{U}}(R_{u,i}-\bar{R}_{u})(R_{i,j}-\bar{R}_{u})}{\sqrt{\sum_{u\in{u}}(R_{u,i}-\bar{R}_{u})^{2}}\sqrt{\sum_{u\in{U}}(R_{u,j}-\bar{R}_{u})^{2}}}" /></a>
+
+where:
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=(R_{u,i}-\bar{R}_{u})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?(R_{u,i}-\bar{R}_{u})" title="(R_{u,i}-\bar{R}_{u})" /></a>
+
+is the rating R of item i from user u, minus the average (mean) rating for all the item the user rated.
+
