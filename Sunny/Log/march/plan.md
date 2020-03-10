@@ -20,4 +20,9 @@
 3.6 plan
 1. Electron study with react & node 
 
+3.9 plan
+1. Electron study with tweet
+
+3.10 plan
+1.Electron study (finish)
 ```
