@@ -25,4 +25,5 @@
 
 3.10 plan
 1.Electron study (finish)
+2. prep for Django and Flask
 ```
