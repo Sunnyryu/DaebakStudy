@@ -1,7 +1,6 @@
-# %%
-
 """
 Artificial neural network
+Using Python 3.6.2 64-bit
 """
 
 # Perceptron (Threshold Logic Unit)
@@ -23,7 +22,6 @@ per_clf.fit(X, Y)
 
 y_pred = per_clf.predict([[2, 0.5]])
 
-# %%
 
 # MLP (Multi-Layer Perceptron)
 
@@ -35,7 +33,7 @@ We will use an example from MNIST dataset to classify objects
 import tensorflow as tf
 from tensorflow import keras
 
-tf.__version__
+print(tf.__version__)
 keras.__version__
 
 '''
@@ -67,24 +65,24 @@ building the neural network
 '''
 
 model = keras.models.Sequential() #creating sequential model
-model.add(keras.layers.Flatten(iuput_shape=[28, 28])) # flatten layer to convert each input image into 1D array
+model.add(keras.layers.Flatten(input_shape=[28, 28])) # flatten layer to convert each input image into 1D array
 model.add(keras.layers.Dense(300, activation="relu")) # dense layer with 300 neurons with ReLU activation function
 model.add(keras.layers.Dense(100, activation="relu")) # 100
 model.add(keras.layers.Dense(10, activation="softmax")) # 10 with softmax activation function (because classes are exclusive)
 
 # checking out the model details
-model.summary()
-model.layers
+print(model.summary())
+print(model.layers)
 hidden1 = model.layers[1]
-hidden1.name
-model.get_layer('dense') is hidden1
+print(hidden1.name)
+print(model.get_layer('dense') is hidden1)
 
 # checking the weights and the biases within
 weights, biases = hidden1.get_weights()
-weights
-weights.shape
-biases
-biases.shape
+print(weights)
+print(weights.shape)
+print(biases)
+print(biases.shape)
 
 '''
 compiling the model - 
