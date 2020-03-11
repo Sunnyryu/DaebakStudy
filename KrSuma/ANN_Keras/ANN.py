@@ -34,7 +34,7 @@ import tensorflow as tf
 from tensorflow import keras
 
 print(tf.__version__)
-keras.__version__
+print(keras.__version__)
 
 '''
 using keras to load the dataset.
@@ -95,6 +95,19 @@ model.compile(loss="sparse_categorical_crossentropy", optimizer="sgd", metrics=[
 
 history = model.fit(X_train, y_train, epochs=30, validation_data=(X_valid, y_valid))
 
+model.evaluate(X_test, y_test)
 
+'''
+using the model to make the predictions
+'''
 
+X_new = X_test[:3]
+y_proba = model.predict(X_new)
+print(y_proba.round(2))
 
+y_pred = model.predict_classes(X_new)
+print(y_pred)
+print(np.array(class_names)[y_pred])
+
+y_new = y_test[:3]
+print(y_new)
