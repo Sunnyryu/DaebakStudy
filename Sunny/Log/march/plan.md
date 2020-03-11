@@ -26,4 +26,7 @@
 3.10 plan
 1.Electron study (finish)
 2. prep for Django and Flask
+
+3.11 plan
+1. Django Study(On-going)
 ```
