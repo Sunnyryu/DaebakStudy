@@ -52,4 +52,26 @@ S(i,j) - is the function S(i,j)
 
 R(u,N) - rating user u gave item N
 
+#### Slope-one predictors collaborative filtering
+
+-Easy to implement due to simplicity.
+
+1. first, ahead of time (batch mode) we will compute all the deviation between 
+every pair of items. 
+2. then in the second phase, we make the predictions using the table of deviations.
+
+-The average deviation of an item i with respect to j is:
+
+(INSERT HERE)
+
+where
+
+(INSERT HERE)
+
+is how many elements are in S and X is the entire set of all ratings 
+(Card stands for cardinality).
+
+-Then the Weighted slope-one calculation is as follows:
+
+where
 
