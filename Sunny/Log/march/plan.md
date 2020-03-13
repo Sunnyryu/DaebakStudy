@@ -28,5 +28,12 @@
 2. prep for Django and Flask
 
 3.11 plan
-1. Django Study(On-going)
+1. Django Study (setting rewind)
+
+3.12 plan
+1. Django Study (code rewind)
+
+3.13 plan
+1. Liquid Study (Liquid based on Ruby on rails)
+
 ```
