@@ -160,5 +160,9 @@ last => 배열의 끝 아이템을 호출함!
 lstrip => 왼쪽 공백 제거 
 {{ "          So much room for activities!          " | lstrip }} =>So much room for activities!
 
+index => 배열의 인덱스 값에 해당하는 것을 호출 
+<!-- product.tags = "sale", "mens", "womens", "awesome" -->
+{{ product.tags[2] }} => womens
+
 
 ```
