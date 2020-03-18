@@ -39,6 +39,10 @@
 3.16 plan
 1. Liquid Study
 
-3.17 paln
+3.17 plan
 1. Liquid Study (learning-liquid-updated)
+
+3.18 plan
+1. Liquid Study 
+2. Python Rewind
 ```
