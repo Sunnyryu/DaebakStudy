@@ -40,9 +40,12 @@
 1. Liquid Study
 
 3.17 plan
-1. Liquid Study (learning-liquid-updated)
+1. Liquid Study 
 
 3.18 plan
-1. Liquid Study 
+1. Liquid Study (Liquid learning book start)
 2. Python Rewind
+
+3.19 plan
+1. Python Study & Liquid Study
 ```
