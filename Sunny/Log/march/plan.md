@@ -48,4 +48,7 @@
 
 3.19 plan
 1. Python Study & Liquid Study
+
+3.20 plan
+1. Python Study
 ```
