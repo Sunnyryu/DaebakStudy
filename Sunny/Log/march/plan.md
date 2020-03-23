@@ -51,4 +51,7 @@
 
 3.20 plan
 1. Python Study
+
+3.23 plan
+1. Python Study & Crawling Prep (Tommorrow, I will be make new crawling cord)
 ```
