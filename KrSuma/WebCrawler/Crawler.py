@@ -27,13 +27,8 @@ envydata = []
 def validate_url(url):
     if url.lower().startswith('http'):
         return True
-    raise ValueError from None
-
-
-def retry(retries):
-    retries -= 1
-    print("Exception raised: Retrying ...")
-    print("Retries left : " + retries)
+    else:
+        raise ValueError from None
 
 
 def save_img(filename, img_url, retries=3):
@@ -47,7 +42,9 @@ def save_img(filename, img_url, retries=3):
             try:
                 urllib.request.urlretrieve(img_url, filename + '.jpg', _progress)
             except urllib.error.URLError:
-                retry(retries)
+                retries -= 1
+                print("Exception raised: Retrying ...")
+                print("Retries left : " + retries)
                 continue
 
 
