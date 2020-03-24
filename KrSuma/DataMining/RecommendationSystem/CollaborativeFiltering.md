@@ -49,7 +49,7 @@ where
 
 n is sample size,
 
-xi and yi are the individual sample points with index i,
+xi and yi are the individual sample points with index i,``
 
 x bar is the sample mean for x, likewise for y bar being the sample mean for y.
 
