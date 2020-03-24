@@ -2,7 +2,11 @@
 
 """
 1. removed redundant libraries
-2. combine functions into class
+2. changed use of insecure method from urllib
+3. specified url exception
+
+to-do:
+-combine functions into class
 """
 
 from bs4 import BeautifulSoup
@@ -23,8 +27,7 @@ envydata = []
 def validate_url(url):
     if url.lower().startswith('http'):
         return True
-    else:
-        raise ValueError from None
+    raise ValueError from None
 
 
 def retry(retries):
@@ -43,7 +46,7 @@ def save_img(filename, img_url, retries=3):
         if validate_url(img_url):
             try:
                 urllib.request.urlretrieve(img_url, filename + '.jpg', _progress)
-            except urllib.error.URLError:  # specified the exception, added retries counter.
+            except urllib.error.URLError:
                 retry(retries)
                 continue
 
@@ -139,9 +142,3 @@ with open(csv_name, 'w', newline='') as f:
          ])
     writer.writerows(envydata)
 
-# for d in info:
-#     data = str(d)
-#     if "og:title" in data:
-#         print(data)
-#     if "og:image" in data:
-#         print(data)
