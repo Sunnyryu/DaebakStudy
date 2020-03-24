@@ -54,4 +54,8 @@
 
 3.23 plan
 1. Python Study & Crawling Prep (Tommorrow, I will be make new crawling cord)
+
+3.24 plan
+1. Selenium study
+
 ```
