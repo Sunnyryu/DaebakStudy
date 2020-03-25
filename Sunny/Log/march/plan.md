@@ -58,4 +58,6 @@
 3.24 plan
 1. Selenium study
 
+3.25 plan
+1. Selenium study & prep 1 
 ```
