@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d81b384e-6fe0-4001-9cd0-53ec5530db64" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Shopify.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Crawler.py" beforeDir="false" afterPath="$PROJECT_DIR$/Crawler.py" afterDir="false" />
     </list>
@@ -41,7 +43,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.Shopify">
     <configuration name="Crawler" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="WebCrawler" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -64,8 +66,54 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Shopify" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="WebCrawler" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Shopify.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Shopify_Scraper" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="WebCrawler" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Shopify_Scraper.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Shopify" />
+        <item itemvalue="Python.Shopify_Scraper" />
         <item itemvalue="Python.Crawler" />
       </list>
     </recent_temporary>
@@ -92,7 +140,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1585022578684</updated>
-      <workItem from="1585022582604" duration="17622000" />
+      <workItem from="1585022582604" duration="25252000" />
     </task>
     <servers />
   </component>
@@ -100,26 +148,30 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="579" y="114" key="CommitChangelistDialog2" timestamp="1585204822538">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="579" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1585204822538" />
     <state x="739" y="261" key="FileChooserDialogImpl" timestamp="1585037412277">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="739" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1585037412276" />
-    <state width="914" height="68" key="GridCell.Tab.0.bottom" timestamp="1585193518690">
+    <state width="1877" height="342" key="GridCell.Tab.0.bottom" timestamp="1585204360486">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="68" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585193518690" />
-    <state width="914" height="68" key="GridCell.Tab.0.center" timestamp="1585193518690">
+    <state width="1877" height="342" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585204360486" />
+    <state width="1877" height="342" key="GridCell.Tab.0.center" timestamp="1585204360486">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="68" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585193518690" />
-    <state width="914" height="68" key="GridCell.Tab.0.left" timestamp="1585193518689">
+    <state width="1877" height="342" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585204360486" />
+    <state width="1877" height="342" key="GridCell.Tab.0.left" timestamp="1585204360486">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="68" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585193518689" />
-    <state width="914" height="68" key="GridCell.Tab.0.right" timestamp="1585193518690">
+    <state width="1877" height="342" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585204360486" />
+    <state width="1877" height="342" key="GridCell.Tab.0.right" timestamp="1585204360486">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="68" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585193518690" />
+    <state width="1877" height="342" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585204360486" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1585191077100">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -136,16 +188,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585191077100" />
-    <state x="221" y="166" key="refactoring.ChangeSignatureDialog" timestamp="1585029776500">
+    <state x="221" y="166" key="refactoring.ChangeSignatureDialog" timestamp="1585203806585">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="221" y="166" key="refactoring.ChangeSignatureDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585029776500" />
+    <state x="221" y="166" key="refactoring.ChangeSignatureDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585203806585" />
     <state x="623" y="225" width="670" height="676" key="search.everywhere.popup" timestamp="1585029758818">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="623" y="225" width="670" height="676" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1585029758818" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/WebCrawler$Crawler.coverage" NAME="Crawler Coverage Results" MODIFIED="1585193518678" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/WebCrawler$Shopify.coverage" NAME="Shopify Coverage Results" MODIFIED="1585204360471" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/WebCrawler$Shopify_Scraper.coverage" NAME="Shopify_Scraper Coverage Results" MODIFIED="1585199438842" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/WebCrawler$Crawler.coverage" NAME="Crawler Coverage Results" MODIFIED="1585198226468" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

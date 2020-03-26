@@ -1,11 +1,9 @@
-# -*-coding:utf-8
-
 """
 1. removed redundant libraries
 2. changed use of insecure method from urllib
 3. specified url exception
 """
-import webbrowser
+#  import webbrowser
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
 import urllib.request
