@@ -4,11 +4,8 @@
 1. removed redundant libraries
 2. changed use of insecure method from urllib
 3. specified url exception
-
-to-do:
--combine functions into class
 """
-
+import webbrowser
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
 import urllib.request
@@ -19,10 +16,8 @@ import sys
 
 base_url = "https://www.envylook.com"
 
-envydata = []
+envy_data = []
 
-
-# 이미지로 저장
 
 def validate_url(url):
     if url.lower().startswith('http'):
@@ -33,19 +28,20 @@ def validate_url(url):
 
 def save_img(filename, img_url, retries=3):
     def _progress(count, block_size, total_size):
-        sys.stderr.write('\r>> Downloading %s %.1f%%' %
-                         (img_url, float(count * block_size) / float(total_size) * 100.0))
+        sys.stderr.write('\r>> Downloading %s %.1f%%' % (
+            img_url, float(count * block_size) / float(total_size) * 100.0))
         sys.stderr.flush()
 
     while retries > 0:
-        if validate_url(img_url):
-            try:
+        try:
+            if validate_url(img_url):
                 urllib.request.urlretrieve(img_url, filename + '.jpg', _progress)
-            except urllib.error.URLError:
-                retries -= 1
-                print("Exception raised: Retrying ...")
-                print("Retries left : " + retries)
-                continue
+            break
+        except urllib.error.URLError:
+            retries -= 1
+            print("Exception raised: Retrying ...")
+            print("Retries left : " + str(retries))
+            continue
 
 
 def product_detail(no, url):
@@ -91,7 +87,7 @@ def product_detail(no, url):
             save_img(str(no) + "-" + str(imgfile_count), base_url + s)
             print(base_url + s, end="\n")
         imgfile_count += 1
-    envydata.append(temp)
+    envy_data.append(temp)
 
 
 def envylook_category(category, page):
@@ -121,6 +117,8 @@ def envylook_category(category, page):
     return dirname
 
 
+#  webbrowser.open(base_url)
+
 cate_no = input("카테고리번호를 입력하세요 : ")
 page_no = input("페이지번호를 입력하세요 : ")
 socket.setdefaulttimeout(30)
@@ -128,14 +126,11 @@ result = envylook_category(cate_no, page_no)
 
 csv_name = result + ".csv"
 
-with open(csv_name, 'w', newline='') as f:
+with open(csv_name, 'w', encoding='utf-8', newline='') as f:
     writer = csv.writer(f)
     writer.writerow(
-        ['폴더번호', '주소', '상품명', '브랜드', '종류', '타이틀이미지', '정상가', '통화', '할인가', '통화', '요약설명',
-         '옵션1', '옵션2', '옵션3', '옵션4', '옵션5', '옵션6', '옵션7', '옵션8', '옵션9', '옵션10', '옵션11', '옵션12',
-         '옵션13', '옵션14', '옵션15', '옵션16', '옵션17', '옵션18', '옵션19', '옵션20',
-         '상세이미지', '상세이미지', '상세이미지', '상세이미지', '상세이미지', '상세이미지', '상세이미지', '상세이미지', '상세이미지', '상세이미지',
-         '상세이미지', '상세이미지', '상세이미지', '상세이미지', '상세이미지', '상세이미지', '상세이미지', '상세이미지', '상세이미지', '상세이미지'
-         ])
-    writer.writerows(envydata)
-
+        ['폴더번호', '주소', '상품명', '브랜드', '종류', '타이틀이미지', '정상가', '통화', '할인가', '통화', '요약설명', '옵션1', '옵션2', '옵션3', '옵션4',
+         '옵션5', '옵션6', '옵션7', '옵션8', '옵션9', '옵션10', '옵션11', '옵션12', '옵션13', '옵션14', '옵션15', '옵션16', '옵션17', '옵션18',
+         '옵션19', '옵션20', '상세이미지', '상세이미지', '상세이미지', '상세이미지', '상세이미지', '상세이미지', '상세이미지', '상세이미지', '상세이미지', '상세이미지',
+         '상세이미지', '상세이미지', '상세이미지', '상세이미지', '상세이미지', '상세이미지', '상세이미지', '상세이미지', '상세이미지', '상세이미지'])
+    writer.writerows(envy_data)

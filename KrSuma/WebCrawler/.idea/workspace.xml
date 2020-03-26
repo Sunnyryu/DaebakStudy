@@ -92,7 +92,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1585022578684</updated>
-      <workItem from="1585022582604" duration="10567000" />
+      <workItem from="1585022582604" duration="17622000" />
     </task>
     <servers />
   </component>
@@ -100,22 +100,42 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="914" height="281" key="GridCell.Tab.0.bottom" timestamp="1585028624580">
+    <state x="739" y="261" key="FileChooserDialogImpl" timestamp="1585037412277">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585028624580" />
-    <state width="914" height="281" key="GridCell.Tab.0.center" timestamp="1585028624579">
+    <state x="739" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1585037412276" />
+    <state width="914" height="68" key="GridCell.Tab.0.bottom" timestamp="1585193518690">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585028624579" />
-    <state width="914" height="281" key="GridCell.Tab.0.left" timestamp="1585028624579">
+    <state width="914" height="68" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585193518690" />
+    <state width="914" height="68" key="GridCell.Tab.0.center" timestamp="1585193518690">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585028624579" />
-    <state width="914" height="281" key="GridCell.Tab.0.right" timestamp="1585028624579">
+    <state width="914" height="68" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585193518690" />
+    <state width="914" height="68" key="GridCell.Tab.0.left" timestamp="1585193518689">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585028624579" />
+    <state width="914" height="68" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585193518689" />
+    <state width="914" height="68" key="GridCell.Tab.0.right" timestamp="1585193518690">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="914" height="68" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585193518690" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1585191077100">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585191077100" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1585191077100">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585191077100" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1585191077100">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585191077100" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1585191077100">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585191077100" />
     <state x="221" y="166" key="refactoring.ChangeSignatureDialog" timestamp="1585029776500">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -126,6 +146,6 @@
     <state x="623" y="225" width="670" height="676" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1585029758818" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/WebCrawler$Crawler.coverage" NAME="Crawler Coverage Results" MODIFIED="1585028615926" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/WebCrawler$Crawler.coverage" NAME="Crawler Coverage Results" MODIFIED="1585193518678" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
