@@ -65,5 +65,8 @@
 1. Selenium study & prep 2
 
 3.27 plan
-1. Selenium study & prep 3 
+1. Selenium study & prep 3
+
+3.30 plan
+1. study Selenium(how to error solution) 
 ```
