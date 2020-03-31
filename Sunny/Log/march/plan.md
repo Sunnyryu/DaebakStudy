@@ -68,5 +68,8 @@
 1. Selenium study & prep 3
 
 3.30 plan
-1. study Selenium(how to error solution) 
+1. study Selenium(how to error solution)
+
+3.31 plan
+1. GCP study 
 ```
