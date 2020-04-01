@@ -22,7 +22,6 @@ per_clf.fit(X, Y)
 
 y_pred = per_clf.predict([[2, 0.5]])
 
-
 # MLP (Multi-Layer Perceptron)
 
 '''
@@ -64,11 +63,12 @@ class_names[y_train[0]]
 building the neural network
 '''
 
-model = keras.models.Sequential() #creating sequential model
-model.add(keras.layers.Flatten(input_shape=[28, 28])) # flatten layer to convert each input image into 1D array
-model.add(keras.layers.Dense(300, activation="relu")) # dense layer with 300 neurons with ReLU activation function
-model.add(keras.layers.Dense(100, activation="relu")) # 100
-model.add(keras.layers.Dense(10, activation="softmax")) # 10 with softmax activation function (because classes are exclusive)
+model = keras.models.Sequential()  # creating sequential model
+model.add(keras.layers.Flatten(input_shape=[28, 28]))  # flatten layer to convert each input image into 1D array
+model.add(keras.layers.Dense(300, activation="relu"))  # dense layer with 300 neurons with ReLU activation function
+model.add(keras.layers.Dense(100, activation="relu"))  # 100
+model.add(
+    keras.layers.Dense(10, activation="softmax"))  # 10 with softmax activation function (because classes are exclusive)
 
 # checking out the model details
 print(model.summary())

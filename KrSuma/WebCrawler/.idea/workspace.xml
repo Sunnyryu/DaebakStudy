@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d81b384e-6fe0-4001-9cd0-53ec5530db64" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -20,6 +19,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
+  <component name="JupyterTrust" id="ac431d3b-5dd6-44de-a68a-8d41a71b747b" />
   <component name="ProjectId" id="1ZYilU5Cf7fL88lKJdnNxXOAUFZ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -32,6 +32,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Prototypes" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -143,7 +144,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1585022578684</updated>
-      <workItem from="1585022582604" duration="29787000" />
+      <workItem from="1585022582604" duration="38153000" />
     </task>
     <servers />
   </component>
@@ -159,42 +160,42 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="579" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1585204822538" />
-    <state x="739" y="261" key="FileChooserDialogImpl" timestamp="1585037412277">
+    <state x="739" y="261" key="FileChooserDialogImpl" timestamp="1585639555584">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="739" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1585037412276" />
-    <state width="1877" height="342" key="GridCell.Tab.0.bottom" timestamp="1585211492862">
+    <state x="739" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1585639555584" />
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom" timestamp="1585703377642">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="342" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585211492862" />
-    <state width="1877" height="342" key="GridCell.Tab.0.center" timestamp="1585211492862">
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585703377642" />
+    <state width="1877" height="348" key="GridCell.Tab.0.center" timestamp="1585703377642">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="342" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585211492862" />
-    <state width="1877" height="342" key="GridCell.Tab.0.left" timestamp="1585211492862">
+    <state width="1877" height="348" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585703377642" />
+    <state width="1877" height="348" key="GridCell.Tab.0.left" timestamp="1585703377642">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="342" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585211492862" />
-    <state width="1877" height="342" key="GridCell.Tab.0.right" timestamp="1585211492862">
+    <state width="1877" height="348" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585703377642" />
+    <state width="1877" height="348" key="GridCell.Tab.0.right" timestamp="1585703377642">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="342" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585211492862" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1585191077100">
+    <state width="1877" height="348" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585703377642" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1585703377643">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585191077100" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1585191077100">
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585703377643" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1585703377642">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585191077100" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1585191077100">
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585703377642" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1585703377642">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585191077100" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1585191077100">
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585703377642" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1585703377642">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585191077100" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585703377642" />
     <state x="221" y="166" key="refactoring.ChangeSignatureDialog" timestamp="1585203806585">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -205,7 +206,7 @@
     <state x="623" y="225" width="672" height="676" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1585206439866" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/WebCrawler$Shopify.coverage" NAME="Shopify Coverage Results" MODIFIED="1585211492852" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/WebCrawler$Shopify.coverage" NAME="Shopify Coverage Results" MODIFIED="1585286773174" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/WebCrawler$Shopify_Scraper.coverage" NAME="Shopify_Scraper Coverage Results" MODIFIED="1585199438842" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/WebCrawler$Crawler.coverage" NAME="Crawler Coverage Results" MODIFIED="1585198226468" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
