@@ -72,4 +72,7 @@
 
 3.31 plan
 1. GCP study 
+
+4.1 plan
+1. self study & online study
 ```
