@@ -75,4 +75,7 @@
 
 4.1 plan
 1. self study & online study
+
+4.2 plan
+1. self study & selenium basic test 1 
 ```
