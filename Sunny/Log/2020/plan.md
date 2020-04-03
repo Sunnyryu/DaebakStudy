@@ -78,4 +78,7 @@
 
 4.2 plan
 1. self study & selenium basic test 1 
+
+4.3 plan
+1. crawling prep
 ```
