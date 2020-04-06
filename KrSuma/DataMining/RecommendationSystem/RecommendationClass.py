@@ -85,31 +85,6 @@ class recommender:
             for item2 in ratings:
                 ratings[item2] /= self.frequencies[item][item2]
 
-    # for huge datasets - not used for now
-    """
-    NEED TESTING
-    """
-
-    def slopeOneRecommendations(self, userRatings):
-        #     recommendations = {}
-        #     frequencies = {}
-        #     for (userItem, userRating) in userRatings.items():
-        #         for (diffItem, diffRatings) in self.deviations.items():
-        #             if diffItem not in userRatings and \
-        #                     userItem in self.deviations[diffItem]:
-        #                 freq = self.frequencies[diffItem][userItem]
-        #                 recommendations.setdefault(diffItem, 0.0)
-        #                 frequencies.setdefault(diffItem, 0)
-        #                 recommendations[diffItem] += (diffRatings[userItem] +
-        #                                               userRating) * freq
-        #                 frequencies[diffItem] += freq
-        #     recommendations = [(self.convertProductID2name(k),
-        #                         v / frequencies[k])
-        #                        for (k, v) in recommendations.items()]
-        #     recommendations.sort(key=lambda artistTuple: artistTuple[1],
-        #                          reverse=True)
-        #     return recommendations[:50]
-        pass
 
     # pearson correlation
     def pearson(self, rating1, rating2):
