@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d81b384e-6fe0-4001-9cd0-53ec5530db64" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/notes.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Crawler.py" beforeDir="false" afterPath="$PROJECT_DIR$/Crawler.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Shopify.py" beforeDir="false" afterPath="$PROJECT_DIR$/Shopify.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes.md" beforeDir="false" afterPath="$PROJECT_DIR$/notes.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,7 +170,7 @@
       <option name="presentableId" value="Default" />
       <updated>1585022578684</updated>
       <workItem from="1585022582604" duration="38153000" />
-      <workItem from="1586313082107" duration="12216000" />
+      <workItem from="1586313082107" duration="18119000" />
     </task>
     <servers />
   </component>
@@ -191,22 +190,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="739" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1585639555584" />
-    <state width="1877" height="197" key="GridCell.Tab.0.bottom" timestamp="1586330908708">
+    <state width="1877" height="197" key="GridCell.Tab.0.bottom" timestamp="1586337971485">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="197" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1586330908708" />
-    <state width="1877" height="197" key="GridCell.Tab.0.center" timestamp="1586330908707">
+    <state width="1877" height="197" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1586337971485" />
+    <state width="1877" height="197" key="GridCell.Tab.0.center" timestamp="1586337971485">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="197" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1586330908707" />
-    <state width="1877" height="197" key="GridCell.Tab.0.left" timestamp="1586330908707">
+    <state width="1877" height="197" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1586337971485" />
+    <state width="1877" height="197" key="GridCell.Tab.0.left" timestamp="1586337971484">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="197" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1586330908707" />
-    <state width="1877" height="197" key="GridCell.Tab.0.right" timestamp="1586330908707">
+    <state width="1877" height="197" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1586337971484" />
+    <state width="1877" height="197" key="GridCell.Tab.0.right" timestamp="1586337971485">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="197" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1586330908707" />
+    <state width="1877" height="197" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1586337971485" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1586328732846">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -232,19 +231,8 @@
     </state>
     <state x="623" y="225" width="672" height="676" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1585206439866" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Shopify.py</url>
-          <line>184</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/WebCrawler$Shopify.coverage" NAME="Shopify Coverage Results" MODIFIED="1586330908693" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/WebCrawler$Shopify.coverage" NAME="Shopify Coverage Results" MODIFIED="1586337971472" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/WebCrawler$test.coverage" NAME="test Coverage Results" MODIFIED="1586325151644" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/WebCrawler$Shopify_Scraper.coverage" NAME="Shopify_Scraper Coverage Results" MODIFIED="1585199438842" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/WebCrawler$Crawler.coverage" NAME="Crawler Coverage Results" MODIFIED="1585198226468" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
