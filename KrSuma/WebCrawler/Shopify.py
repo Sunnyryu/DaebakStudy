@@ -1,3 +1,6 @@
+# main program
+# usage : run shopify.py, then enter the url of the vendor site.
+
 import csv
 import json
 import time
@@ -91,16 +94,22 @@ def extract_products_collection(url, col):
         for product in products:
             title = product['title']
             product_type = product['product_type']
-            product_url = url + '/products/' + product['handle']
+            # product_url = url + '/products/' + product['handle']
             product_handle = product['handle']
+            product_vendor = product['vendor']
+            # product_tags = product['tags']
 
             for i, variant in enumerate(product['variants']):
-                price = variant['price']
-                option1_value = variant['option1'] or ''
-                option2_value = variant['option2'] or ''
-                option3_value = variant['option3'] or ''
-                option_value = ' '.join([option1_value, option2_value, option3_value]).strip()
-                sku = variant['sku']
+                variant_price = variant['price']
+                option1_name = variant['option1'] or ''
+                option2_name = variant['option2'] or ''
+                option3_name = variant['option3'] or ''
+                # option_value = ' '.join([option1_value, option2_value, option3_value]).strip()
+                variant_sku = variant['sku']
+                variant_compare_at_price = variant['compare_at_price']
+                variant_requires_shipping = variant['requires_shipping']
+                variant_grams = variant['grams']
+                variant_taxable = variant['taxable']
                 main_image_src = ''
                 if product['images']:
                     main_image_src = product['images'][0]['src']
@@ -110,11 +119,68 @@ def extract_products_collection(url, col):
                 if not variant['available']:
                     stock = 'No'
 
-                row = {'sku': sku, 'product_type': product_type,
-                       'title': title, 'option_value': option_value,
-                       'price': price, 'stock': stock, 'body': str(product['body_html']),
-                       'variant_id': product_handle + str(variant['id']),
-                       'product_url': product_url, 'image_src': image_src}
+                # row = {'variant_sku': variant_sku,
+                #        'product_type': product_type,
+                #        'title': title,
+                #        'option1_value': option1_value,
+                #        'option2_value': option2_value,
+                #        'option3_value': option3_value,
+                #        'price': variant_price,
+                #        'stock': stock,
+                #        'body': str(product['body_html']),
+                #        'variant_id': product_handle + str(variant['id']),
+                #        'product_handle': product_handle,
+                #        'product_url': product_url,
+                #        'image_src': image_src}
+
+                row = {'Handle': product_handle,
+                       'Title': title,
+                       'Body (HTML)': str(product['body_html']),
+                       'Vendor': product_vendor,
+                       'Type': product_type,
+                       'Tags': '',
+                       'Published': '',
+                       'Option1 Name': str(option1_name),
+                       'Option1 Value': '',
+                       'Option2 Name': str(option2_name),
+                       'Option2 Value': '',
+                       'Option3 Name': str(option3_name),
+                       'Option3 Value': '',
+                       'Variant SKU': variant_sku,
+                       'Variant Grams': str(variant_grams),
+                       'Variant Inventory Tracker': '',
+                       'Variant Inventory Policy': '',
+                       'Variant Fulfillment Service': '',
+                       'Variant Price': variant_price,
+                       'Variant Compare At Price': str(variant_compare_at_price),
+                       'Variant Requires Shipping': str(variant_requires_shipping),
+                       'Variant Taxable': str(variant_taxable),
+                       'Variant Barcode': '',
+                       'Image Src': image_src,
+                       'Image Position': '',
+                       'Image Alt Text': '',
+                       'Gift Card': '',
+                       'SEO Title': '',
+                       'SEO Description': '',
+                       'Google Shopping/Google Product Category': '',
+                       'Google Shopping/Gender': '',
+                       'Google Shopping/Age Group': '',
+                       'Google Shopping/MPN': '',
+                       'Google Shopping/AdWords Grouping': '',
+                       'Google Shopping/AdWords Label': '',
+                       'Google Shopping/Condition': '',
+                       'Google Shopping/Custom Product': '',
+                       'Google Shopping/Custom Label 0': '',
+                       'Google Shopping/Custom Label 1': '',
+                       'Google Shopping/Custom Label 2': '',
+                       'Google Shopping/Custom Label 3': '',
+                       'Google Shopping/Custom Label 4': '',
+                       'Variant Image': '',
+                       'Variant Weight Unit': '',
+                       'Variant Tax Code': '',
+                       'Cost per item': str(0)
+                       }
+
                 for k in row:
                     row[k] = str(row[k].strip()) if row[k] else ''
                 yield row
@@ -127,11 +193,67 @@ def extract_products_collection(url, col):
 def extract_products(input_url, path):
     print("Running...")
     tic = time.perf_counter()
-    with open(path, 'w', encoding='utf-8') as f:
+    with open(path, 'w', encoding='utf-8', newline='') as f:
         writer = csv.writer(f)
-        writer.writerow(['Code', 'Collection', 'Category',
-                         'Name', 'Variant Name',
-                         'Price', 'In Stock', 'URL', 'Image URL', 'Body'])
+        # writer.writerow(['Code',
+        #                  'Collection',
+        #                  'Category',
+        #                  'Name',
+        #                  'Variant Name',
+        #                  'Price',
+        #                  'In Stock',
+        #                  'URL',
+        #                  'Image URL',
+        #                  'Body'])
+
+        writer.writerow(['Handle',
+                         'Title',
+                         'Body (HTML)',
+                         'Vendor',
+                         'Type',
+                         'Tags',
+                         'Published',
+                         'Option1 Name',
+                         'Option1 Value',
+                         'Option2 Name',
+                         'Option2 Value',
+                         'Option3 Name',
+                         'Option3 Value',
+                         'Variant SKU',
+                         'Variant Grams',
+                         'Variant Inventory Tracker',
+                         'Variant Inventory Policy',
+                         'Variant Fulfillment Service',
+                         'Variant Price',
+                         'Variant Compare At Price',
+                         'Variant Requires Shipping',
+                         'Variant Taxable',
+                         'Variant Barcode',
+                         'Image Src',
+                         'Image Position',
+                         'Image Alt Text',
+                         'Gift Card',
+                         'SEO Title',
+                         'SEO Description',
+                         'Google Shopping/Google Product Category',
+                         'Google Shopping/Gender',
+                         'Google Shopping/Age Group',
+                         'Google Shopping/MPN',
+                         'Google Shopping/AdWords Grouping',
+                         'Google Shopping/AdWords Label',
+                         'Google Shopping/Condition',
+                         'Google Shopping/Custom Product',
+                         'Google Shopping/Custom Label 0',
+                         'Google Shopping/Custom Label 1',
+                         'Google Shopping/Custom Label 2',
+                         'Google Shopping/Custom Label 3',
+                         'Google Shopping/Custom Label 4',
+                         'Variant Image',
+                         'Variant Weight Unit',
+                         'Variant Tax Code',
+                         'Cost per item'
+                         ])
+
         seen_variants = set()
         for col in get_page_collections(input_url):
             # if collections and col['handle'] not in collections:
@@ -139,17 +261,71 @@ def extract_products(input_url, path):
             handle = col['handle']
             title = col['title']
             for product in extract_products_collection(input_url, handle):
-                variant_id = product['variant_id']
-                if variant_id in seen_variants:
-                    continue
+                # variant_id = product['variant_id']
+                # if variant_id in seen_variants:
+                #     continue
+                #
+                # seen_variants.add(variant_id)
 
-                seen_variants.add(variant_id)
-                writer.writerow([product['sku'], str(title),
-                                 product['product_type'],
-                                 product['title'], product['option_value'],
-                                 product['price'],
-                                 product['stock'], product['product_url'],
-                                 product['image_src'], product['body']])
+                # writer.writerow([product['sku'],  # code
+                #                  str(title),  # collection
+                #                  product['product_type'],  # category
+                #                  product['title'],  # name
+                #                  product['option_value'],  # variant name
+                #                  product['price'],  # price
+                #                  product['stock'],  # in stock
+                #                  product['product_url'],  # url
+                #                  product['image_src'],  # image url
+                #                  product['body']  # body
+                #                  ])
+
+                writer.writerow([product['Handle'],
+                                 product['Title'],
+                                 product['Body (HTML)'],
+                                 product['Vendor'],
+                                 product['Type'],
+                                 product['Tags'],
+                                 product['Published'],
+                                 product['Option1 Name'],
+                                 product['Option1 Value'],
+                                 product['Option2 Name'],
+                                 product['Option2 Value'],
+                                 product['Option3 Name'],
+                                 product['Option3 Value'],
+                                 product['Variant SKU'],
+                                 product['Variant Grams'],
+                                 product['Variant Inventory Tracker'],
+                                 product['Variant Inventory Policy'],
+                                 product['Variant Fulfillment Service'],
+                                 product['Variant Price'],
+                                 product['Variant Compare At Price'],
+                                 product['Variant Requires Shipping'],
+                                 product['Variant Taxable'],
+                                 product['Variant Barcode'],
+                                 product['Image Src'],
+                                 product['Image Position'],
+                                 product['Image Alt Text'],
+                                 product['Gift Card'],
+                                 product['SEO Title'],
+                                 product['SEO Description'],
+                                 product['Google Shopping/Google Product Category'],
+                                 product['Google Shopping/Gender'],
+                                 product['Google Shopping/Age Group'],
+                                 product['Google Shopping/AdWords Grouping'],
+                                 product['Google Shopping/AdWords Label'],
+                                 product['Google Shopping/Condition'],
+                                 product['Google Shopping/Custom Product'],
+                                 product['Google Shopping/Custom Label 0'],
+                                 product['Google Shopping/Custom Label 1'],
+                                 product['Google Shopping/Custom Label 2'],
+                                 product['Google Shopping/Custom Label 3'],
+                                 product['Google Shopping/Custom Label 4'],
+                                 product['Variant Image'],
+                                 product['Variant Weight Unit'],
+                                 product['Variant Tax Code'],
+                                 product['Cost per item']
+                ])
+
     toc = time.perf_counter()
     print('Elapsed time: {toc-tic:0.4f} seconds')
 

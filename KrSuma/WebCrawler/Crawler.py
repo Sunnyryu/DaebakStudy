@@ -1,9 +1,11 @@
+# web crawler for envylook.com
+
 """
 1. removed redundant libraries
 2. changed use of insecure method from urllib
 3. specified url exception
 """
-#  import webbrowser
+
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
 import urllib.request
