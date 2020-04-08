@@ -103,6 +103,6 @@
 1. Flask project prep
 (use bootstrap and flask)
 
-4.7 plan
-1.
+4.7 ~ 4.10 study plan (ongoing)
+flask setting & flask system rewind for flask project 
 ```
