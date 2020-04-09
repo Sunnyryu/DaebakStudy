@@ -62,16 +62,18 @@ every pair of items.
 
 -The average deviation of an item i with respect to j is:
 
-(INSERT HERE)
+<a href="https://www.codecogs.com/eqnedit.php?latex=dev_{i,j}=\sum_{u\in{S_{i,j}(X)}}\frac{u_{i}&space;-&space;u_{j}}{Card(S_{i,j}(X))}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?dev_{i,j}=\sum_{u\in{S_{i,j}(X)}}\frac{u_{i}&space;-&space;u_{j}}{Card(S_{i,j}(X))}" title="dev_{i,j}=\sum_{u\in{S_{i,j}(X)}}\frac{u_{i} - u_{j}}{Card(S_{i,j}(X))}" /></a>
 
 where
 
-(INSERT HERE)
+<a href="https://www.codecogs.com/eqnedit.php?latex=Card(S_{i,j}(X))" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Card(S_{i,j}(X))" title="Card(S_{i,j}(X))" /></a>
 
 is how many elements are in S and X is the entire set of all ratings 
 (Card stands for cardinality).
 
 -Then the Weighted slope-one calculation is as follows:
 
-where
+<a href="https://www.codecogs.com/eqnedit.php?latex=p(u,&space;i)=\frac{\sum_{i\in{S(u)-\{j\}}}(dev_{j,i}&space;&plus;&space;u_{i})C_{j,i}}{{\sum_{i\in{S(u)-\{j\}}}C_{j,i}}}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?p(u,&space;i)=\frac{\sum_{i\in{S(u)-\{j\}}}(dev_{j,i}&space;&plus;&space;u_{i})C_{j,i}}{{\sum_{i\in{S(u)-\{j\}}}C_{j,i}}}" title="p(u, i)=\frac{\sum_{i\in{S(u)-\{j\}}}(dev_{j,i} + u_{i})C_{j,i}}{{\sum_{i\in{S(u)-\{j\}}}C_{j,i}}}" /></a>
+
+
 

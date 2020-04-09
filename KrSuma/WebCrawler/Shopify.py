@@ -40,7 +40,6 @@ def get_page(input_url, page):
             break
         except HTTPError:
             retry()
-
     products = json.loads(data.decode())['products']
     return products
 
@@ -94,10 +93,10 @@ def extract_products_collection(url, col):
         for product in products:
             title = product['title']
             product_type = product['product_type']
-            # product_url = url + '/products/' + product['handle']
             product_handle = product['handle']
             product_vendor = product['vendor']
             # product_tags = product['tags']
+            # product_url = url + '/products/' + product['handle']
 
             for i, variant in enumerate(product['variants']):
                 variant_price = variant['price']
@@ -106,32 +105,20 @@ def extract_products_collection(url, col):
                 option3_name = variant['option3'] or ''
                 # option_value = ' '.join([option1_value, option2_value, option3_value]).strip()
                 variant_sku = variant['sku']
-                variant_compare_at_price = variant['compare_at_price']
                 variant_requires_shipping = variant['requires_shipping']
                 variant_grams = variant['grams']
                 variant_taxable = variant['taxable']
+                # variant_compare_at_price = variant['compare_at_price']
+
                 main_image_src = ''
                 if product['images']:
                     main_image_src = product['images'][0]['src']
 
                 image_src = get_image(variant['id'], product) or main_image_src
+
                 stock = 'Yes'
                 if not variant['available']:
                     stock = 'No'
-
-                # row = {'variant_sku': variant_sku,
-                #        'product_type': product_type,
-                #        'title': title,
-                #        'option1_value': option1_value,
-                #        'option2_value': option2_value,
-                #        'option3_value': option3_value,
-                #        'price': variant_price,
-                #        'stock': stock,
-                #        'body': str(product['body_html']),
-                #        'variant_id': product_handle + str(variant['id']),
-                #        'product_handle': product_handle,
-                #        'product_url': product_url,
-                #        'image_src': image_src}
 
                 row = {'Handle': product_handle,
                        'Title': title,
@@ -153,7 +140,7 @@ def extract_products_collection(url, col):
                        'Variant Inventory Policy': 'deny',
                        'Variant Fulfillment Service': 'manual',
                        'Variant Price': variant_price,
-                       'Variant Compare At Price': '',  # str(variant_compare_at_price),
+                       'Variant Compare At Price': '',
                        'Variant Requires Shipping': str(variant_requires_shipping),
                        'Variant Taxable': str(variant_taxable),
                        'Variant Barcode': '',
@@ -246,30 +233,19 @@ def extract_products(input_url, path):
                          'Cost per item'
                          ])
 
-        seen_variants = set()
+        # seen_variants = set()
         for col in get_page_collections(input_url):
             # if collections and col['handle'] not in collections:
             #     continue
             handle = col['handle']
             title = col['title']
             for product in extract_products_collection(input_url, handle):
+
                 # variant_id = product['variant_id']
                 # if variant_id in seen_variants:
                 #     continue
                 #
                 # seen_variants.add(variant_id)
-
-                # writer.writerow([product['sku'],  # code
-                #                  str(title),  # collection
-                #                  product['product_type'],  # category
-                #                  product['title'],  # name
-                #                  product['option_value'],  # variant name
-                #                  product['price'],  # price
-                #                  product['stock'],  # in stock
-                #                  product['product_url'],  # url
-                #                  product['image_src'],  # image url
-                #                  product['body']  # body
-                #                  ])
 
                 writer.writerow([product['Handle'],
                                  product['Title'],
@@ -318,7 +294,7 @@ def extract_products(input_url, path):
                                  product['Variant Weight Unit'],
                                  product['Variant Tax Code'],
                                  product['Cost per item']
-                ])
+                                 ])
 
     toc = time.perf_counter()
     print('Elapsed time: {toc-tic:0.4f} seconds')
