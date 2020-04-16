@@ -103,6 +103,10 @@
 1. Flask project prep
 (use bootstrap and flask)
 
-4.7 ~ 4.10 study plan (ongoing)
-flask setting & flask system rewind for flask project 
+4.7 ~ 4.10 study plan 
+flask setting & flask system rewind for flask project
+crud, database, login authentication  
+
+4.13 ~4.17 study plan
+flask pagination, flask reset & error page, flask toy project 
 ```
