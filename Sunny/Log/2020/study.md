@@ -108,5 +108,8 @@ flask setting & flask system rewind for flask project
 crud, database, login authentication  
 
 4.13 ~4.17 study plan
-flask pagination, flask rewind, flask toy project(prep) 
+flask pagination, flask rewind, flask toy project(prep)
+
+4.20 ~ 4.24 study plan
+flask toy project - > plan, prepare, db setting, python coding, html(front) coding, check & deploy(ongoing) 
 ```
