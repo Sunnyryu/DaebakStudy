@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='fullcalendar/core/main.css') }}" />
+    <script src="{{ url_for('static',filename='jquery/jquery-3.5.0.min.js') }}"></script>
+    <script src="{{url_for('static',filename='fullcalendar/core/main.js')}}"></script>
+    <link rel="stylesheet" href="{{ url_for('static',filename='fullcalendar/daygrid/main.css') }}" />
+    <script src="{{url_for('static',filename='fullcalendar/daygrid/main.js')}}"></script>
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                events: '{{url_for('scheduler')}}',
+                plugins: ['dayGrid']
+                
+            });
+
+            calendar.render();
+            $('#insertBtn').click(function () {
+                $.ajax({
+                    url: '{{url_for('scheduler')}}',
+                    type: 'post',
+                    success: function (res) {
+                        let data = JSON.parse(res);
+                        if (data.rows > 0) {
+                            //데이터가 입력되면 이벤트를 다시 가져옴
+                            $("#calendar").fullCalendar('refetchEvents')
+                        }
+                        else {
+                            alert('실패');
+                        }
+                    }
+                });
+            });
+        });
+
+    </script>
+</head>
+<body>
+    <button type="button" id="insertBtn">스케줄 등록</button>
+    <div id='calendar'></div>
+</body>
+</html>
