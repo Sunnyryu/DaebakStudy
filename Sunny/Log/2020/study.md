@@ -111,5 +111,8 @@ crud, database, login authentication
 flask pagination, flask rewind, flask toy project(prep)
 
 4.20 ~ 4.24 study plan
-flask toy project - > plan, prepare, db setting, python coding, html(front) coding, check & deploy(ongoing) 
+flask test coding - > plan, prepare, db setting, python coding, html(front) coding
+
+4.27~ study plan
+flask document study & toyproject 
 ```
