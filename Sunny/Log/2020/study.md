@@ -113,6 +113,6 @@ flask pagination, flask rewind, flask toy project(prep)
 4.20 ~ 4.24 study plan
 flask test coding - > plan, prepare, db setting, python coding, html(front) coding
 
-4.27~ study plan
-flask document study & toyproject 
+4.27~ 4.29 study plan
+flask document study study 
 ```
