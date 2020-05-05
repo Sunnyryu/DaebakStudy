@@ -187,7 +187,71 @@ register_api(UserAPI, 'user_api', '/users/', pk='user_id')
 ##### 어플리케이션 컨텍스트
 
 ```
+어플리케이션 컨텍스트는 current_app 라는 컨텍스트 로컬을 작동
+
+어플리케이션의 컨텍스트가 존재하는 주요한 이유는 과거에 다수의 기능이 더 나은 솔루션의 부족으로 요청 컨텍스트에 덧붙여있었다는 것
+
+일반적인 차선책은 현재 요청에 대한 어플리케이션 참조와 연결되있는 current_app 프록시를 나중에 사용하는 것
+
+1. 어플리케이션 컨텍스트 생성
+
+어플리케이션 컨텍스트를 만들기 위해서는 두 가지 방법이 있음
+
+임의적인 방식으로, 요청 컨텍스트가 들어올 때마다, 어플리케이션 컨텍스트가 필요한 경우 바로 옆에 생성될 것이며, 그 결과로 여러분은 어플리케이션 컨텍스트가 필요없다면 그 존재를 무시할 수 있음
+
+두 번째 방식은 app_context() 메소드를 사용하는 명시적으로 방법
+
+ex)
+from flask import Flask, current_app
+
+app = Flask(__name__)
+with app.app_context():
+    # within this block, current_app points to app.
+    print current_app.name
+
+어플리케이션 문맥은 SERVER_NAME 이 설정된 경우 url_for() 함수에 의해서도 사용,
+요청이 없을 경우에도 URL 생성 가능하게 해줌!
+
+2. 컨텍스트의 지역성
+
+어플리케이션 문맥은 필요에 따라 생성되고 소멸, 결코 쓰레드들 사이를 이동할 수 없고 요청 사이에서 공유되지 않을 것임. 
+그와 같이, 어플리케이션 문맥은 데이타베이스 연결 정보와 다른 정보들을 저장하는 최적의 장소이며, 내부 스택 객체는 flask._app_ctx_stack임
+확장들은 충분히 구별되는 이름을 선택하다는 가정하에서 자유롭게 가장 상위에 추가적인 정보를 저장함
+
+3. 컨텍스트 사용
+
+컨텍스트는 일반적으로 요청당 하나씩 생성되거나 직접 사용하는 경우에 캐시 리소스에 사용(ex- 데이터베이스 연결), 어플리케이션 컨텍스트에 저장할 때에는 반드시 고유한 이름을 선택하여야 함, Flask 어플리케이션들과 확장(플러그인 같은)들에서 공유되기 때문
+
+일반적인 사용법은 컨텍스트에서의 암시적인 자원 캐시, 컨텍스트 분해를 통한 리소스 할당 해제
+
+일반적으로 자원 X 를 생성하는 get_X() 함수가 있다고 하자. 만약 그것이 아직 존재 하지 않고, 다른 방법으로 같은 자원을 반환하는 teardown_X() 함수가 teardown 핸들러에 등록
+
+ex)
+import sqlite3
+from flask import _app_ctx_stack
+
+def get_db():
+    top = _app_ctx_stack.top
+    if not hasattr(top, 'database'):
+        top.database = connect_to_database()
+    return top.database
+
+@app.teardown_appcontext
+def teardown_db(exception):
+    top = _app_ctx_stack.top
+    if hasattr(top, 'database'):
+        top.database.close()
+
+처음 get_db()가 호출된 시점에 연결이 이뤄짐, 암시적으로 만들기 위해서는 LocalProxy를 사용가능 
+
+ex)
+from werkzeug.local import LocalProxy
+db = LocalProxy(get_db)
+
+사용자가 ``db``에 내부 호출인 ``get_db()``를 통해서 직접 접근 가능하게 해줌
+```
 
 
+```
 
 ```
