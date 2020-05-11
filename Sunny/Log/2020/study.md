@@ -116,7 +116,10 @@ flask test coding - > plan, prepare, db setting, python coding, html(front) codi
 4.27~ 4.29 study plan
 flask document study
 
-5.4 ~5.5 study plan
-flask document study
+5.4 ~5.8 study plan
+flask document study, python function rewind
+
+5.11 study plan
+toy project(ongoing)
 
 ```
