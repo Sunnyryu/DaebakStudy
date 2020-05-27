@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="img1">
+<div>
+<h1> 당첨 결과는? </h1>
+<h2>당첨번호는 {{first_prize_lotto }}입니다. </h2>
+{% if first_count == 1 %}
+<h2>1등 당첨되었습니다.</h2>
+{% elif second_count == 1 %}
+<h2>2등 당첨되었습니다.</h2>
+{% elif three_count == 1 %}
+<h2>3등 당첨되었습니다.</h2>
+{% elif four_count == 1 %}
+<h2>4등 당첨되었습니다.</h2>
+{% elif five_count == 1 %}
+<h2>5등 당첨되었습니다.</h2>
+{% elif next_chance == 1  %}
+<h2> 꽝입니다.</h2>
+</div>
+{% endif %}
+<small class="text-muted"></small>
+<script src="/static/js/choices.js"></script>
+
+{% endblock %}
+</html>
