@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="img1">
+    <div class="shade">
+            <div class="blackboard2">
+                    <div class="form">
+                    <br>
+                    {% if margin %}
+                            <p>
+                                    <label> 당신은 {{ margin }}원을 얻었으며,</label>
+                                    <h  r>
+                                    <label> 1등은 {{first_count}}번, 2등은 {{second_count}}번, 3등은 {{three_count}}번, 4등은 {{four_count}}번, 5등은 {{five_count}}번이 나왔습니다.</label>
+                            </p>
+                    {%  elif minus_margin %}
+                            <p>
+                                    <label> 당신은 {{ minus_margin }}원을 잃었으며,</label>
+                                    <hr>
+                                    <label> 1등은 {{first_count}}번, 2등은 {{second_count}}번, 3등은 {{three_count}}번, 4등은 {{four_count}}번, 5등은 {{five_count}}번이 나왔습니다.</label>
+                            </p>
+                    {% endif %}
+                    </div>
+            </div>
+    </div>
+</div>
+{% endblock %}

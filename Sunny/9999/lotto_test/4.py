@@ -42,7 +42,7 @@ while True:
             print(a)
             print(three_count)
             print(four_count)
-            print(f'사용한 돈은 {money}, 3등 담청금은 {three_money}, 4등 당첨금은 {four_money}, 5등 당첨금은 {five_money} 입니다.')
+            print(f'사용한 돈은 {money}, 3등 당첨금은 {three_money}, 4등 당첨금은 {four_money}, 5등 당첨금은 {five_money} 입니다.')
             print('적자로 인해 더이상 구입하실 수 없습니다.')
             break
         else:
