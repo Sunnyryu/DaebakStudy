@@ -8,7 +8,9 @@
   </head>
   <body>
     <div id="summernote">
-    <p>have a good day</p>
+    {% for a in html %}
+    {{ a.body_HTML }}
+    {% endfor %}
     </div>
     <script>
       $('#summernote').summernote({

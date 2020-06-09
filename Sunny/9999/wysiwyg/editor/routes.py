@@ -63,11 +63,13 @@ def index():
             db.create_all()
             db.session.add(html)
             db.session.commit()
-            print(1312313312313)
     
     return render_template('index.html')
 
 
 @app.route("/")
 def home():
-    return render_template('home.html')
+    #html = Html.query.filter()
+    html = Html.query.filter_by(vendor = 'allcall').all()
+    print(html)
+    return render_template('home.html', html=html)

@@ -3,7 +3,7 @@ import datetime
 
 date = datetime.datetime.now()
 class Html(db.Model):
-    __tablename__ =  date
+    __tablename__ =  "daebakProduct"
     __table_args__ = {'mysql_collate': 'utf8_general_ci'}
 
 
