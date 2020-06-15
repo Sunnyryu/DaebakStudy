@@ -11,19 +11,14 @@ def index():
     #table_search_name = db.table('daebakProduct').name
     with open('/home/sunny/DaebakStudy/Sunny/9999/wysiwyg/editor/csv/BR-banharimarket--268items.csv', encoding='utf-8') as f:
         reader = csv.reader(f)
-        reader2 = csv.reader(f)
         next(reader)
-        next(reader2)
         try:
             if Html.query.filter_by(vendor='banharimarket').first():
                 for c in reader:
                     k = c[0]
                     Html.query.filter_by(handle=k).delete()
                     db.session.commit()
-                print(reader2)
-
-            else:
-                for i in reader2:
+                for i in reader:
                     html2 = Html(handle = i[0],
                                 title = i[1],
                                 body_HTML = i[2],
@@ -74,9 +69,7 @@ def index():
                                 )
                     db.create_all()
                     db.session.add(html2)
-                    print(2)
-                    db.session.commit() 
-
+                    db.session.commit()
                 print(1)
         except:
             for i in reader:

@@ -4,9 +4,7 @@ import datetime
 date = datetime.datetime.now()
 class Html(db.Model):
     __tablename__ =  "daebakProduct"
-    __table_args__ = {'mysql_collate': 'utf8_general_ci'}
-
-
+    #__table_args__ = {'mysql_collate': 'utf8mb4'}
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     handle = db.Column(db.String(100), nullable=False)
     title = db.Column(db.String(256), nullable=False)

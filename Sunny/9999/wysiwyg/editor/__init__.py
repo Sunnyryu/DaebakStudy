@@ -11,6 +11,7 @@ db_name = os.getenv("DB_NAME")
 app = Flask(__name__)
 app.config['SECRET_KEY'] = secret_key
 app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql://{username}:{password}@localhost:3306/{db_name}'
+db_url = f'mysql://{username}:{password}@localhost:3306/{db_name}'
 db = SQLAlchemy(app)
 print(app.config['SQLALCHEMY_DATABASE_URI'])
 
