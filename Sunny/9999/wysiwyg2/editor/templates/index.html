@@ -1,1 +1,11 @@
-<h1>h2</h1>
+{% extends 'base.html' %}
+{% block body %}
+<form action="/product" method="GET">
+<div class="search">
+    <input type="search" name="comment" class="search-box" />
+    <span class="search-button">
+      <span class="search-icon"></span>
+    </span>
+  </div>
+</form>
+{% endblock %} 

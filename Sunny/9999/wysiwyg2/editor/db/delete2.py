@@ -24,12 +24,12 @@ def Delete():
             #print(type(csv_product_reader))
             with connection.cursor() as cursor:
                 for row in csv_product_reader:
-                    #print(row[0])
-                    sql = '''
-                    DELETE FROM product WHERE handle = %s
-                    '''
-                    cursor.execute(sql, row[0])
-                    #rows = cursor.fetchall()
+                    print(row[0])
+                    sql = "DELETE FROM product WHERE handle = '%s';" % f'{row[0]}'
+                    cursor.execute(sql)
+                    rows = cursor.fetchall()
+                    #print(rows)
+            #print(row)
             connection.commit()
 
     except Exception as e:

@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% block body %}
+{% if handle_list %}
+<div class="container-fluid">
+  <div class="row">
+    <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+      <div class="sidebar-sticky">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link text">
+              <span data-feather="file"></span></span>
+              Handle 
+          </li>
+          {% for handle in handle_list %}
+          <li class="nav-item">
+            <a class="nav-link" href="/product/{{handle}}">
+              {{ handle }}
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+  
+
+
+      </div>
+    </nav>
+
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Dashboard</h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+          <div class="btn-group mr-2">
+            <button class="btn btn-sm btn-outline-secondary">Share</button>
+          </div>
+        </div>
+      </div>
+
+    
+      <h2>Section title</h2>
+      <div class="table-responsive">
+      </div>
+      {% elif product_list %}
+      <form action="/">
+        <p>{{product_list[0]['id']}}</p>
+        <textarea name="Title" id="Title">
+          {{product_list[0]['title']}}
+        </textarea>
+        <textarea name="Body_HTML" id="Body_HTML">
+          {{product_list[0]['body_HTML']}}
+        </textarea>
+        <textarea name="Tag" id="Tag">
+          {{product_list[0]['tag']}}
+        </textarea>
+        <textarea name="Published" id="Published">
+          {{product_list[0]['published']}}
+        </textarea>
+        <textarea name="Price" id="Price">
+          {{product_list[0]['variant_price']}}
+        </textarea>
+        <textarea name="Option1_name" id="Option1_name">
+          {{product_list[0]['option1_name']}}
+        </textarea>
+        
+      </form>
+      {% endif %}
+    </main>
+  </div>
+</div>
+
+
+{% endblock %} 

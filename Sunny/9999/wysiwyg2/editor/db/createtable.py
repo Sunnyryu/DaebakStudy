@@ -40,7 +40,7 @@ def Createtable():
                                 variant_inventory_qty VARCHAR(100) NOT NULL,
                                 variant_inventory_policy VARCHAR(100) NOT NULL,
                                 variant_fullfillment_service VARCHAR(100) NOT NULL,
-                                varient_price VARCHAR(100) NOT NULL,
+                                variant_price VARCHAR(100) NOT NULL,
                                 variant_compare_at_price VARCHAR(100) NOT NULL,
                                 varient_requires_shipping VARCHAR(100) NOT NULL,
                                 variant_taxable VARCHAR(100) NOT NULL,
@@ -71,7 +71,8 @@ def Createtable():
                             )ENGINE=InnoDB DEFAULT CHARSET=utf8
                 '''
                 cursor.execute(sql)
-                rows = cursor.fetchall()
+            rows = cursor.fetchall()
+                #print(rows)
             connection.commit()
     except Exception as e:
         print('->', e)

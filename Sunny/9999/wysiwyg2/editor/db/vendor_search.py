@@ -4,7 +4,7 @@ import csv
 from dotenv import load_dotenv
 load_dotenv()
 
-def Delete():
+def VendorSearch(vendor):
     pw = os.getenv("PASSWORD")
     user = os.getenv("USER")
     db = os.getenv("DB")
@@ -18,18 +18,16 @@ def Delete():
                                  charset='utf8mb4',
                                  cursorclass=pymysql.cursors.DictCursor)
         if connection :
-            csv_product = open('/home/sunny/DaebakStudy/Sunny/9999/wysiwyg2/editor/static/csv/BR-banharimarket--268items.csv', 'r', encoding='utf-8')
-            csv_product_reader = csv.reader(csv_product)
-            next(csv_product_reader)
-            #print(type(csv_product_reader))
             with connection.cursor() as cursor:
-                for row in csv_product_reader:
-                    #print(row[0])
-                    sql = '''
-                    DELETE FROM product WHERE handle = %s
-                    '''
-                    cursor.execute(sql, row[0])
-                    #rows = cursor.fetchall()
+                sql = '''
+                SELECT DISTINCT handle FROM product where vendor = %s
+                '''
+                a = cursor.execute(sql, vendor)
+                rows = cursor.fetchall()
+                handlelist = []
+                for row in rows:
+                    handlelist.append(row['handle'])
+                    handlelist.sort()
             connection.commit()
 
     except Exception as e:
@@ -38,4 +36,4 @@ def Delete():
     finally:
         if connection:
             connection.close()
-    return rows
+    return handlelist
