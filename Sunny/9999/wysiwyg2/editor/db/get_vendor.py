@@ -4,7 +4,7 @@ import csv
 from dotenv import load_dotenv
 load_dotenv()
 
-def Vendor_read():
+def Get_vendor(handle):
     pw = os.getenv("PASSWORD")
     user = os.getenv("USER")
     db = os.getenv("DB")
@@ -20,10 +20,11 @@ def Vendor_read():
         if connection :
             with connection.cursor() as cursor:
                 sql = '''
-                SELECT DISTINCT vendor FROM product
+                SELECT DISTINCT vendor FROM product where handle = %s
                 '''
-                a = cursor.execute(sql)
+                a = cursor.execute(sql, handle)
                 rows = cursor.fetchall()
+                vendor_get = rows[0]['vendor']
             connection.commit()
 
     except Exception as e:
@@ -32,4 +33,4 @@ def Vendor_read():
     finally:
         if connection:
             connection.close()
-    return rows
+    return vendor_get

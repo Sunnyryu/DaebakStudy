@@ -1,0 +1,9 @@
+table.revise {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  table.revise, th.revise, td.revise {
+    border: 0.1px solid black;
+    font-size: 1.5em;
+  }

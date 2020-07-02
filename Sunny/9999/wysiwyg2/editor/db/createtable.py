@@ -19,7 +19,7 @@ def Createtable():
         if connection :
             with connection.cursor() as cursor:
                 sql = '''
-                            CREATE TABLE product (
+                            CREATE TABLE product2 (
                                 id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
                                 handle VARCHAR(100) NOT NULL,
                                 title VARCHAR(255) NOT NULL,
@@ -67,7 +67,9 @@ def Createtable():
                                 variant_image VARCHAR(100) NOT NULL,
                                 variant_weight_unit VARCHAR(100) NOT NULL,
                                 variant_tax_code VARCHAR(100) NOT NULL,
-                                cost_per_item VARCHAR(100) NOT NULL
+                                cost_per_item VARCHAR(100) NOT NULL,
+                                revise int NOT NULL,
+                                revise_last_time VARCHAR(100) NOT NULL
                             )ENGINE=InnoDB DEFAULT CHARSET=utf8
                 '''
                 cursor.execute(sql)

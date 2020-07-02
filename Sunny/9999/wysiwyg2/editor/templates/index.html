@@ -8,4 +8,30 @@
     </span>
   </div>
 </form>
+<br>
+<br>
+  <!-- Page Content -->
+  <div class="container">
+    <div class="row">
+        {% for row in rows %}
+        {% if row['title'] %}
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card h-100">
+            <a class="nav-link" href="/product/{{row['handle']}}"><img class="card-img-top" src="{{row['image_src']}}" alt=""></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a class="nav-link" href="/product/{{row['handle']}}">{{row['title']}}</a>
+              </h4>
+              <a class="nav-link" href="/product/{{row['handle']}}"><h5>${{row['variant_price']}}</h5></a>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+    {{ pagination.links }}    
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+
 {% endblock %} 

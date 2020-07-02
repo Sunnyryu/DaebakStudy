@@ -10,8 +10,6 @@ from editor.db.read import ValueSearch
 from editor.db.read2 import Vendor_read
 from editor.db.read3 import Read
 from editor.db.update import Update_table_main, Update_table_etc
-import datetime
-from flask_paginate import Pagination, get_page_args
 
 import pandas as pd
 
@@ -20,41 +18,22 @@ import pandas as pd
 @app.route("/")
 def index():
     rows = Read()
-    print(len(rows))
     #print(rows)
-    def get_rows(offset, per_page):
-        return rows[offset: offset + per_page]
-    page = int(request.args.get('page',1))
-    per_page = 20
-    offset = (page -1) * per_page
-    total = len(rows)
-    pagination_rows = get_rows(offset=offset, per_page=per_page)
-    pagination = Pagination(page=page, per_page=per_page, total=total, css_framework="bootstrap4")
     rows_vendor = Vendor_read()
     rows_vendor_list = []
     for i in rows_vendor:
         if i['vendor']:
             rows_vendor_list.append(i['vendor'])
-    #print(rows)
-    #print(rows_vendor_list)
     #Createtable()
     #Create()
-    return render_template('index.html', rows_vendor=rows_vendor_list, rows=pagination_rows, page=page, per_page=per_page, pagination=pagination)
+    return render_template('index.html', rows_vendor=rows_vendor_list, rows=rows, len_rows=len(rows))
 
 @app.route("/product")
 def product_list():
     vendor = request.args.get('comment')
     rows = ValueSearch(vendor)
-    def get_rows(offset, per_page):
-        return rows[offset: offset + per_page]
-    page = int(request.args.get('page',1))
-    per_page = 12
-    offset = (page -1) * per_page
-    total = len(rows)
-    pagination_rows = get_rows(offset=offset, per_page=per_page)
-    pagination = Pagination(page=page, per_page=per_page, total=total, css_framework="bootstrap4")
     #print(rows)
-    return render_template('product_list.html',rows=pagination_rows, len_rows=len(rows), page=page, per_page=per_page, pagination=pagination)
+    return render_template('product_list.html',rows=rows, len_rows=len(rows))
 
 @app.route("/product/<handle>")
 def product_revise(handle):
@@ -95,31 +74,22 @@ def product_update():
     value_price = request.form.getlist('price')
     value_option1_value = request.form.getlist('option1_value')
     value_option2_value = request.form.getlist('option2_value')
-    revise_times = request.form['revise_times']
-    revise_last_time = request.form['revise_last_time']
-    print(type(revise_times))
-    print(type(revise_last_time))
     for num in range(len(value_id)):
         if num == 0:
             value_new_id = value_id[num].strip(' \r\n\t')
             value_new_title = value_title[num].strip(' \r\n\t')
-            value_new_body_HTML = value_body_HTML[num]
+            value_new_body_HTML = value_body_HTML[num].strip(' \r\n\t')
             value_new_price = value_price[num].strip(' \r\n\t')
-            value_new_option1_value = value_option1_value[num]
-            value_new_revise_times = int(revise_times)+ 1
-            value_new_revise_last_time = datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")
-
+            value_new_option1_value = value_option1_value[num].strip(' \r\n\t')
             #value_new_option2_value = value_option2_value[num].strip(' \r\n\t')
-            rows = Update_table_main(value_new_id, value_new_title, value_new_body_HTML, value_new_price, value_new_option1_value, value_new_revise_times, value_new_revise_last_time)#value_new_option2_value)
+            rows = Update_table_main(value_new_id, value_new_title, value_new_body_HTML, value_new_price, value_new_option1_value)#value_new_option2_value)
         else:
             value_new_id = value_id[num].strip(' \r\n\t')
             value_new_price = value_price[num].strip(' \r\n\t')
-            value_new_option1_value = value_option1_value[num]
-            value_new_revise_times = int(revise_times)+ 1
-            value_new_revise_last_time = datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")
+            value_new_option1_value = value_option1_value[num].strip(' \r\n\t')
     #    value_new_option2_value = value_option2_value[num].strip(' \r\n\t')
-            rows = Update_table_etc(value_new_id, value_new_price, value_new_option1_value, value_new_revise_times, value_new_revise_last_time)
-    #print(rows)
+            rows = Update_table_etc(value_new_id, value_new_price, value_new_option1_value)
+    print(rows)
     
    # print(value_title[0].strip('\r\n'))
     #value3 = request.form

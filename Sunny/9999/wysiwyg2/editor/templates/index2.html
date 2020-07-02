@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block body %}
+<form action="/product" method="GET">
+<div class="search">
+    <input type="search" name="comment" class="search-box" />
+    <span class="search-button">
+      <span class="search-icon"></span>
+    </span>
+  </div>
+</form>
+<br>
+<br>
+  <!-- Page Content -->
+  <div class="container">
+    <div class="row">
+        {% for i in range(len_rows) %}
+        {% if rows[i]['title']%}
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100">
+          <a class="nav-link" href="/product/{{rows[i]['handle']}}"><img class="card-img-top" src="{{rows[i]['image_src']}}" alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title">
+              <a class="nav-link" href="/product/{{rows[i]['handle']}}">{{rows[i]['title']}}</a>
+            </h4>
+            <a class="nav-link" href="/product/{{rows[i]['handle']}}"><h5>${{rows[i]['variant_price']}}</h5></a>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+    
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+
+{% endblock %} 

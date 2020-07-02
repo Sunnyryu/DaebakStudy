@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block body %}
+
+
+{% for i in range(len_rows) %}
+<div class="container">
+    <div class="title">{{rows[0]['vendor']}}</div>
+    <div class="row">
+
+
+
+      <div class="col-lg-24">
+
+
+
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <a href="#"><img class="card-img-top" src="{{rows[i]['image_src']}}" alt=""></a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="#">{{rows[i]['title']}}</a>
+                </h4>
+                <a href=""><h5>{{rows[i]['variant_price']}}</h5></a>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+{% endfor %}
+
+{% endblock %}
