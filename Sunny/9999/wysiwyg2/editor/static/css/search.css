@@ -5,7 +5,8 @@
 .search {
 	width: 100px;
 	height: 100px;
-	margin: 350px auto 0;
+	margin: 150px auto 0;
+	margin-bottom: 200px;
 	background-color: #242628;
 	position: relative;
 	overflow: hidden;

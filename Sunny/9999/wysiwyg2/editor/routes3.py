@@ -24,8 +24,6 @@ def index():
     for row in rows:
         if row['title']:
             rows_list.append(row)
-    print(len(rows_list))
-    #print(rows)
     def get_rows(offset, per_page):
         return rows_list[offset: offset + per_page]
     page = int(request.args.get('page',1))
@@ -39,10 +37,7 @@ def index():
     for i in rows_vendor:
         if i['vendor']:
             rows_vendor_list.append(i['vendor'])
-    #print(rows)
-    #print(rows_vendor_list)
-    #Createtable()
-    #Create()
+
     return render_template('index.html', rows_vendor=rows_vendor_list, rows=pagination_rows, page=page, per_page=per_page, pagination=pagination)
 
 @app.route("/product")
@@ -62,35 +57,11 @@ def product_list():
 
 @app.route("/product/<handle>")
 def product_revise(handle):
-#    vendor_get = Get_vendor(handle)
-#    title_handle = VendorSearch(vendor_get)
+
     product_list = HandleSearch(handle)
-    
-    #print(handle_list)
+
     return render_template('product.html', product_list=product_list, product_list_value=len(product_list))  
-#@app.route("/product")
-#@app.route("/product/<handle>")
-#def product2(handle=None):
-#    vendor = request.args.get('comment')
-#    #print(vendor)
-#    #print(vendor)
-#    #print(vendor_handle_list[0])
-#    if handle:
-#        vendor_get = Get_vendor(handle)
-#        handle_list = VendorSearch(vendor_get)
-#        product_list = HandleSearch(handle)
-        #   print(product_list)
-        #print(vendor)
-#        return render_template('product.html', product_list=product_list, product_list_value=len(product_list), handle_value_list=handle_list)
-#    vendor_handle_list = VendorSearch(vendor)
-    
-#    return render_template('product.html', handle_list=vendor_handle_list)
-#@app.route("/1")
-#def summernote():
-#    print(Read())
-#    table_read = pd.DataFrame(Read())
-#    table_read2 = pd.DataFrame.to_string(table_read)
-#    return render_template('summernote.html', table_read=table_read2)
+
 @app.route("/product_update", methods=["POST"])
 def product_update():
     value_id = request.form.getlist('id')

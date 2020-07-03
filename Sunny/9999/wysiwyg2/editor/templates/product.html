@@ -33,13 +33,13 @@
             <td class="revise">
               <textarea type="text" class="Id" name="id" readonly>{{product_list[num]['id']}}</textarea>
               </td>
-            <td class="revise">색상</td>
+            <td class="norevise">색상</td>
             <td>        
               <textarea class="Option1_value" name="option1_value">
               {{product_list[num]['option1_value']}}
             </textarea>
           </td>
-            <td class="revise">사이즈</td>
+            <td class="norevise">사이즈</td>
             {% if product_list[num]['option2_value'] %}
             <td class="revise"><textarea class="Option2_value" name="option2_value">
               {{product_list[num]['option2_value']}}
@@ -47,7 +47,7 @@
             {% else %}
             <td class="revise">사이즈가 없음</td>
             {% endif %}
-            <td class="revise">가격</td>
+            <td class="norevise">가격</td>
             <td class="revise">        
               <textarea class="Price" name="price">
               {{product_list[num]['variant_price']}}

@@ -14,7 +14,6 @@
   <div class="container">
     <div class="row">
         {% for row in rows %}
-        {% if row['title'] %}
         <div class="col-lg-3 col-md-6 mb-4">
           <div class="card h-100">
             <a class="nav-link" href="/product/{{row['handle']}}"><img class="card-img-top" src="{{row['image_src']}}" alt=""></a>
@@ -26,7 +25,6 @@
             </div>
           </div>
         </div>
-        {% endif %}
       {% endfor %}
     </div>
     {{ pagination.links }}    
