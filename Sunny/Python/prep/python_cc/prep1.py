@@ -6,6 +6,6 @@ from save import save_to_file
 #so_jobs = get_so_jobs()
 indeed_jobs = get_indeed_jobs()
 jobs = indeed_jobs
-#jobs = so_jobs + indeed_jobs
+jobs = so_jobs + indeed_jobs
 save_to_file(jobs)
 #print(indeed_jobs)
