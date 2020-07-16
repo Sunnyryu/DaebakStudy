@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block body %}
+
+    <main role="main" class="px-4">
+      <form action="/product_update" method="POST">
+        <div>
+          <small>revise times:</small>
+          <input id="revise_times" name="revise_times" value="{{product_list[0]['revise']}}" readonly> 
+          <br>
+          {% if product_list[0]['revise_last_time'] != "1" %} 
+          <small>revise last time:</small>
+          <input id="revise_last_time" name="revise_last_time" value="{{product_list[0]['revise_last_time']}}" readonly>  
+          {% endif %}
+          <br>
+          <input class="btn btn-sm btn-outline-secondary" type="submit" value="revise">
+        </div>
+        <table style="width:1000px;font-size:2em">
+          <tr>
+            <td>title:</td>     
+            <td>
+            <textarea name="title" class="Title" style="width:100%">
+            {{product_list[0]['title']}}
+            </textarea>
+          </td>
+          </tr>   
+        </table>
+        <textarea class="Body_HTML" name="body_HTML" >
+          {{product_list[0]['body_HTML']}}
+        </textarea>
+        {% for num in range(product_list_value) %}
+        <table class="revise">
+          <tr class="revise">
+            <td class="revise">
+              <textarea type="text" class="Id" name="id" readonly>{{product_list[num]['id']}}</textarea>
+              </td>
+            <td class="norevise">색상</td>
+            <td>        
+              <textarea class="Option1_value" name="option1_value">
+              {{product_list[num]['option1_value']}}
+            </textarea>
+          </td>
+            <td class="norevise">사이즈</td>
+            {% if product_list[num]['option2_value'] %}
+            <td class="revise"><textarea class="Option2_value" name="option2_value">
+              {{product_list[num]['option2_value']}}
+            </textarea></td>
+            {% else %}
+            <td class="revise">사이즈가 없음</td>
+            {% endif %}
+            <td class="norevise">가격</td>
+            <td class="revise">        
+              <textarea class="Price" name="price">
+              {{product_list[num]['variant_price']}}
+            </textarea>
+          </td>
+          </tr>
+        {% endfor %}
+        
+      </table>
+      </form>
+    </main>
+
+
+  
+{% endblock %} 

@@ -1,12 +1,15 @@
 import os
 from flask import render_template, url_for, redirect, request
 from editor import app
+from editor.db.vendor_search import VendorSearch
 from editor.db.handle_search import HandleSearch
-from editor.db.value_search_read import ValueSearch
-from editor.db.vendor_read import Vendor_read
-from editor.db.index_value_read import IndexValueread
+from editor.db.get_vendor import Get_vendor
+from editor.db.createtable import Createtable
+from editor.db.create import Create
+from editor.db.read import ValueSearch
+from editor.db.read2 import Vendor_read
+from editor.db.read3 import Read
 from editor.db.update import Update_table_main, Update_table_etc
-from editor.db.make_csv import Make_csv
 import datetime
 from flask_paginate import Pagination, get_page_args
 
@@ -16,11 +19,13 @@ import pandas as pd
 
 @app.route("/")
 def index():
-    rows = IndexValueread()
+    rows = Read()
     rows_list = []
     for row in rows:
         if row['title']:
             rows_list.append(row)
+    print(len(rows_list))
+    #print(rows)
     def get_rows(offset, per_page):
         return rows_list[offset: offset + per_page]
     page = int(request.args.get('page',1))
@@ -34,7 +39,10 @@ def index():
     for i in rows_vendor:
         if i['vendor']:
             rows_vendor_list.append(i['vendor'])
-
+    #print(rows)
+    #print(rows_vendor_list)
+    #Createtable()
+    #Create()
     return render_template('index.html', rows_vendor=rows_vendor_list, rows=pagination_rows, page=page, per_page=per_page, pagination=pagination)
 
 @app.route("/product")
@@ -54,11 +62,35 @@ def product_list():
 
 @app.route("/product/<handle>")
 def product_revise(handle):
-
+#    vendor_get = Get_vendor(handle)
+#    title_handle = VendorSearch(vendor_get)
     product_list = HandleSearch(handle)
-
+    
+    #print(handle_list)
     return render_template('product.html', product_list=product_list, product_list_value=len(product_list))  
-
+#@app.route("/product")
+#@app.route("/product/<handle>")
+#def product2(handle=None):
+#    vendor = request.args.get('comment')
+#    #print(vendor)
+#    #print(vendor)
+#    #print(vendor_handle_list[0])
+#    if handle:
+#        vendor_get = Get_vendor(handle)
+#        handle_list = VendorSearch(vendor_get)
+#        product_list = HandleSearch(handle)
+        #   print(product_list)
+        #print(vendor)
+#        return render_template('product.html', product_list=product_list, product_list_value=len(product_list), handle_value_list=handle_list)
+#    vendor_handle_list = VendorSearch(vendor)
+    
+#    return render_template('product.html', handle_list=vendor_handle_list)
+#@app.route("/1")
+#def summernote():
+#    print(Read())
+#    table_read = pd.DataFrame(Read())
+#    table_read2 = pd.DataFrame.to_string(table_read)
+#    return render_template('summernote.html', table_read=table_read2)
 @app.route("/product_update", methods=["POST"])
 def product_update():
     value_id = request.form.getlist('id')
@@ -77,7 +109,7 @@ def product_update():
             value_new_title = value_title[num].strip(' \r\n\t')
             value_new_body_HTML = value_body_HTML[num]
             value_new_price = value_price[num].strip(' \r\n\t')
-            value_new_option1_value = value_option1_value[num].strip(' \r\n\t')
+            value_new_option1_value = value_option1_value[num]
             value_new_revise_times = int(revise_times)+ 1
             value_new_revise_last_time = datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")
 
@@ -86,11 +118,10 @@ def product_update():
         else:
             value_new_id = value_id[num].strip(' \r\n\t')
             value_new_price = value_price[num].strip(' \r\n\t')
-            value_new_option1_value = value_option1_value[num].strip(' \r\n\t')
+            value_new_option1_value = value_option1_value[num]
             value_new_revise_times = int(revise_times)+ 1
             value_new_revise_last_time = datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")
     #    value_new_option2_value = value_option2_value[num].strip(' \r\n\t')
             rows = Update_table_etc(value_new_id, value_new_price, value_new_option1_value, value_new_revise_times, value_new_revise_last_time)
-    make_csv = Make_csv()
-    print(make_csv)
+
     return redirect('/')    

@@ -1,12 +1,15 @@
 import os
 from flask import render_template, url_for, redirect, request
 from editor import app
+from editor.db.vendor_search import VendorSearch
 from editor.db.handle_search import HandleSearch
-from editor.db.value_search_read import ValueSearch
-from editor.db.vendor_read import Vendor_read
-from editor.db.index_value_read import IndexValueread
+from editor.db.get_vendor import Get_vendor
+from editor.db.createtable import Createtable
+from editor.db.create import Create
+from editor.db.read import ValueSearch
+from editor.db.read2 import Vendor_read
+from editor.db.read3 import Read
 from editor.db.update import Update_table_main, Update_table_etc
-from editor.db.make_csv import Make_csv
 import datetime
 from flask_paginate import Pagination, get_page_args
 
@@ -16,7 +19,7 @@ import pandas as pd
 
 @app.route("/")
 def index():
-    rows = IndexValueread()
+    rows = Read()
     rows_list = []
     for row in rows:
         if row['title']:
@@ -77,7 +80,7 @@ def product_update():
             value_new_title = value_title[num].strip(' \r\n\t')
             value_new_body_HTML = value_body_HTML[num]
             value_new_price = value_price[num].strip(' \r\n\t')
-            value_new_option1_value = value_option1_value[num].strip(' \r\n\t')
+            value_new_option1_value = value_option1_value[num]
             value_new_revise_times = int(revise_times)+ 1
             value_new_revise_last_time = datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")
 
@@ -86,11 +89,10 @@ def product_update():
         else:
             value_new_id = value_id[num].strip(' \r\n\t')
             value_new_price = value_price[num].strip(' \r\n\t')
-            value_new_option1_value = value_option1_value[num].strip(' \r\n\t')
+            value_new_option1_value = value_option1_value[num]
             value_new_revise_times = int(revise_times)+ 1
             value_new_revise_last_time = datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")
     #    value_new_option2_value = value_option2_value[num].strip(' \r\n\t')
             rows = Update_table_etc(value_new_id, value_new_price, value_new_option1_value, value_new_revise_times, value_new_revise_last_time)
-    make_csv = Make_csv()
-    print(make_csv)
+
     return redirect('/')    
