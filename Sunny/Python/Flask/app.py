@@ -1,11 +1,10 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, request, redirect
+#from scrapper import get_jobs
 
-app = Flask(__name__)
+app = Flask("SuperScrapper")
 
-@app.route('/')
+@app.route("/1")
 def home():
-    return render_template('home.html')
+    return render_template("home.html")
 
-
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=80, threaded=True)
+app.run(port="2222")
