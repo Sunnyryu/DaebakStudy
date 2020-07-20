@@ -50,3 +50,16 @@ ex) 시험점수 에측을 하는 데이터가 있다면 10시간 공부해서 9
 
 letter grade (a,b,c,d 등의 여러개의 결과값이 있을 경우 multi level classification이라고 할 수 있음!!)
 ```
+
+```
+tensor는 일반적인 array로 사용 되옵니다.
+rank 0 => Scalar s = 100 / rank 1 => vector [1,2,3] 
+rank 2 = m = [[1,2],[3,4]] ... n차까지 있음
+
+shape는 각각에 요소에 몇개들어있냐에 따라 0,0-D ([]), 1,1-D [X], 2.2-D [X,Y]
+라고 할 수 있음
+
+DT_FLOAT => tf.float32 / DT_DOUBLE => tf.float64
+DT_INT8,16,32,64 => 8bit, 16bit, 32bit, 64bit
+```
+
